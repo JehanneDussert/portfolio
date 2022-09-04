@@ -62,10 +62,5 @@ export const CardWrapper = styled.div`
 `
 
 export const BigCard = styled.div `
-	margin-left: auto;  
-	margin-right: auto;  
-	width: 92vw;
-	height: 80vh;
-	align-items: center;
 	text-align: center;
 `
