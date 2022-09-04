@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyledLink } from '../../utils/style/Atoms'
+import { StyledLink, BigStyledLink } from '../../utils/style/Atoms'
 import { NavContainer, HomeLink } from '../../utils/style/Nav'
 
 function Header() {
   return (
 	<NavContainer>
 		<HomeLink>
-			<StyledLink to="/">Jehanne Dussert</StyledLink>
+			<BigStyledLink to="/">Jehanne Dussert</BigStyledLink>
 		</HomeLink>
 		<div>
 			<StyledLink to="/about">À propos</StyledLink>

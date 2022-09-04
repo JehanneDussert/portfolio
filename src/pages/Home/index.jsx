@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { BigCard } from '../../utils/style/Atoms'
 import HomeImage from '../../assets/home.png'
+import { PageTitle, PageSubtitle } from '../../utils/style/Atoms'
 
 const PageImage = styled.img `
 	width: 30vw;
@@ -20,15 +21,6 @@ const Box = styled.div `
     height: auto;
     padding: 4vw;
     margin-top: 6vh;
-`
-
-const PageTitle = styled.h1 `
-    //padding-bottom: 5vh;
-    color: #373737;
-`
-
-const PageSubtitle = styled.p `
-    color: #373737;
 `
 
 function Home() {

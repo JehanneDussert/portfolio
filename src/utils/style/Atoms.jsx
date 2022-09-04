@@ -6,8 +6,28 @@ export const StyledLink = styled(Link)`
   padding: 1vw 2vw;
   color: white;
   text-decoration: none;
+  font-size: 1.5vw;
+  text-align: center;
+`
+
+export const BigStyledLink = styled(Link)`
+  padding: 1vw 2vw;
+  color: white;
+  text-decoration: none;
   font-size: 2vw;
   text-align: center;
+`
+
+export const PageTitle = styled.h1 `
+    //padding-bottom: 5vh;
+    color: #373737;
+`
+
+export const PageSubtitle = styled.p `
+	color: #373737;
+	padding: 1vw;
+	padding-left: 3vw;
+	padding-right: 3vw;
 `
 
 const rotate = keyframes`
@@ -29,37 +49,37 @@ export const Loader = styled.div`
   width: 0;
 `
 
-export const CardLabel = styled.span`
-	color: #5843e4;
-	font-size: 22px;
-	font-weight: bold;
-	padding-left: 3vw;
-	padding-top: 3vh;
-`
+// export const CardLabel = styled.span`
+// 	color: #5843e4;
+// 	font-size: 22px;
+// 	font-weight: bold;
+// 	padding-left: 3vw;
+// 	padding-top: 3vh;
+// `
 
-export const CardImage = styled.img`
-	height: 10vw;;
-	border-radius: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 6vh;
-`
+// export const CardImage = styled.img`
+// 	height: 10vw;;
+// 	border-radius: 50%;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	padding: 6vh;
+// `
 
-export const CardWrapper = styled.div`
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
-	// padding: 15px;
-	background-color: ${colors.backgroundLight};
-	border-radius: 30px;
-	width: 350px;
-	transition: 200ms;
-	&:hover {
-		cursor: pointer;
-		box-shadow: 2px 2px 10px #e2e3e9;
-	}
-`
+// export const CardWrapper = styled.div`
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	display: flex;
+// 	flex-direction: column;
+// 	// padding: 15px;
+// 	background-color: ${colors.backgroundLight};
+// 	border-radius: 30px;
+// 	width: 350px;
+// 	transition: 200ms;
+// 	&:hover {
+// 		cursor: pointer;
+// 		box-shadow: 2px 2px 10px #e2e3e9;
+// 	}
+// `
 
 export const BigCard = styled.div `
 	text-align: center;
