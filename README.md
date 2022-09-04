@@ -3,15 +3,15 @@
 You can find the expected result [here](https://www.figma.com/file/uc8VsuhcS5KvELt3tbwd4J/Mon-site?node-id=0%3A1).
 
 <p align="center">
-	<img src="./src/assets/page1" >
+	<img src="./src/assets/page1.jpg" >
 </p>
 
 <p align="center">
-	<img src="./src/assets/page2" >
+	<img src="./src/assets/page2.jpg" >
 </p>
 
 <p align="center">
-	<img src="./src/assets/page3" >
+	<img src="./src/assets/page3.jpg" >
 </p>
 
 # Getting Started with Create React App
