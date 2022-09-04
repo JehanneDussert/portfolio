@@ -2,6 +2,18 @@
 
 You can find the expected result [here](https://www.figma.com/file/uc8VsuhcS5KvELt3tbwd4J/Mon-site?node-id=0%3A1).
 
+<p align="center">
+	<img src="./src/assets/page1" >
+</p>
+
+<p align="center">
+	<img src="./src/assets/page2" >
+</p>
+
+<p align="center">
+	<img src="./src/assets/page3" >
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
