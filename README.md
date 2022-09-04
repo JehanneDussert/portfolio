@@ -1,6 +1,7 @@
 # My figma model
 
 You can find the expected result [here](https://www.figma.com/file/uc8VsuhcS5KvELt3tbwd4J/Mon-site?node-id=0%3A1).
+I will add examples of my work and delete some text from the "About page".
 
 <p align="center">
 	<img src="./src/assets/page1.jpg" >
