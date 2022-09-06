@@ -21,7 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/src/components/Card
 /src/pages/Contact
 /src/utils/hooks
 /src/utils/content
