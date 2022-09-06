@@ -15,6 +15,10 @@ I will add examples of my work and delete some text from the "About page".
 	<img src="./src/assets/page3.jpg" >
 </p>
 
+# Heroku app
+
+You can check it [here](https://portfolio-jdussert.herokuapp.com/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
