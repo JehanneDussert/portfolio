@@ -35,8 +35,8 @@ const   ImagesSettings = ({ bgType }) => {
 	return (
 		<div className="flex flex-wrap justify-center items-center w-full h-full">
 			{displayBgs.map((bg, index) => (
-				<button key={index} onClick={() => handleClick(bg.color ? bg.color : bg.img)} className={`w-1/4 h-1/2 mx-4 my-2 justify-center items-center ${bg.color}`}>
-					<img className="h-full w-full" src={bg.img} />
+				<button key={index} onClick={() => handleClick(bg.color ? bg.color : bg.img)} className={`w-1/4 h-full mx-4 justify-center items-center`}>
+					{bg.color ? <div className={`${bg.color} h-1/2 w-full`}></div> : <img className="h-fit w-full" src={bg.img} />}
 			  	</button>
 			))}
 		</div>
@@ -46,7 +46,7 @@ const   ImagesSettings = ({ bgType }) => {
 export const    Settings = () => {
 	const	bgType = useSelector((state) => state.window.bgType);
 
-	return <div className="bg-[#D9D9D9] w-full h-full rounded-b-[5px] flex flex-row">
+	return <div className="bg-[#D9D9D9] w-full h-full rounded-b-[5px] flex flex-row items-center justify-center">
 		<ColorsSettings bgType={bgType}/>
 		<ImagesSettings bgType={bgType}/>
 	</div>
