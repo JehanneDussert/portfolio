@@ -21,17 +21,17 @@ export const WindowsManagement = () => {
 		);
 	};
 
-	const	ExperiencesWindow = () => {
-		return (
-			<Window item={menuIcons[2]}>
-				<Experiences />
-			</Window>
-		);
-	};
+	// const	ExperiencesWindow = () => {
+	// 	return (
+	// 		<Window item={menuIcons[2]}>
+	// 			<Experiences />
+	// 		</Window>
+	// 	);
+	// };
 
 	const TerminalWindow = () => {
 		return (
-			<Window item={menuIcons[6]}>
+			<Window item={menuIcons[5]}>
 				<Terminal />
 			</Window>
 		);
@@ -39,7 +39,7 @@ export const WindowsManagement = () => {
 
 	const EmptyWindow = () => {
 		return (
-			<Window item={menuIcons[7]}>
+			<Window item={menuIcons[6]}>
 				<Empty />
 			</Window>
 		);
