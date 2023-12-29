@@ -7,3 +7,33 @@
         @apply bg-red-200;
     }
 }
+
+  @keyframes minimizeWindow {
+    0% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+  }
+
+  .minimize-animation {
+    animation: minimizeWindow 0.5s ease-in-out;
+  }
+
+  @keyframes openWindow {
+    0% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  .open-animation {
+    animation: openWindow 0.5s ease-in-out;
+  }

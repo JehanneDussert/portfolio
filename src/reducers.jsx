@@ -2,7 +2,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const   initialWdw = {
     bg: "bg-black",
-	bgType: "color"
+	bgType: "color",
+	activeWdw: 'webcam'
 }
 
 const	initialTerminal = {
@@ -21,6 +22,17 @@ const	window = (state = initialWdw, action) => {
 				...state,
 				bgType: action.nextBgType,
 			}
+		case "SET_ACTIVE_WDW":
+			return {
+				...state,
+				activeWdw: action.nextWdw
+			}
+		case "CLOSE_ACTIVE_WDW": {
+			return {
+				...state,
+				activeWdw: ''
+			}
+		}
 		case "RESET_WDW":
 			return initialWdw;
 	  	default: { return state };

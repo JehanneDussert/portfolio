@@ -2,9 +2,9 @@ import folder from "/folder.png";
 import file from "/file.png";
 import micro from "/micro.png";
 import solidarity from "/solidarity.png";
-import { download } from "../utils";
+import { download, explore } from "../utils";
 
-export const    filesButtons = [
+export const    filesButtons = (activeWdw, dispatch) => [
     {
         name: "CV-fr",
         img: file,
@@ -12,7 +12,8 @@ export const    filesButtons = [
     },
 	{
 		name: "Expériences",
-		img: folder
+		img: folder,
+        onClick: () => explore('experience', activeWdw, dispatch),
 	},
 	{
 		name: "Formations",

@@ -5,9 +5,9 @@ import { Provider } from 'react-redux'
 import { store } from './reducers';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <Root />
     </Provider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

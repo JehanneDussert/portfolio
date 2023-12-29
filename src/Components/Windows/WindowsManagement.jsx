@@ -1,63 +1,84 @@
 import { Window } from "./Window";
-import photoBooth from "/photoJolie.jpg";
 import { menuIcons } from "../../constants/menuIcons";
-import { Settings } from "./Setting";
 import { Terminal } from "./Terminal";
+import { useSelector } from "react-redux";
+import { Camera } from "./Camera";
+import { MenuBar } from "../MenuBar/MenuBar";
+import { redirect } from "../../utils";
+import { Experiences } from "./Experiences";
+import { Empty } from "./Empty";
 
-export const    WindowsManagement = ({ activeWindow, setActiveWindow }) => {
+export const WindowsManagement = () => {
+	const	activeWdw = useSelector((state) => state.window.activeWdw);
+
 	const WebcamWindow = () => {
 		return (
-			<Window
-				item={menuIcons[0]}
-				extraClass="absolute top-0 left-0 h-fit"
-				activeWindow={activeWindow}
-				setActiveWindow={setActiveWindow}
-			>
-				<img src ={photoBooth} className="rounded-b-[5px]"/>
-			</Window>
+			<>
+				<Window item={menuIcons[0]}>
+					<Camera />
+				</Window>
+			</>
 		);
 	};
-		
-	const SettingsWindow = () => {
+
+	const	ExperiencesWindow = () => {
 		return (
-			<Window
-				item={menuIcons[4]}
-				extraClass="absolute top-1/2 right-0 transform -translate-y-3/5 h-1/5"
-				activeWindow={activeWindow}
-				setActiveWindow={setActiveWindow}
-			>
-				<Settings/>
+			<Window item={menuIcons[2]}>
+				<Experiences />
 			</Window>
 		);
 	};
 
-	const	TerminalWindow = () => {
+	const TerminalWindow = () => {
 		return (
-			<Window
-				item={menuIcons[2]}
-				extraClass="absolute top-1/7 right-1/2 transform -translate-y-1/5 h-3/5"
-				activeWindow={activeWindow}
-				setActiveWindow={setActiveWindow}
-			>
-				<Terminal/>
+			<Window item={menuIcons[6]}>
+				<Terminal />
 			</Window>
-		)
-	}
+		);
+	};
 
-	const renderActiveWindow = (windowType) => {
+	const EmptyWindow = () => {
+		return (
+			<Window item={menuIcons[7]}>
+				<Empty />
+			</Window>
+		);
+	};
+
+	const renderactiveWdw = (windowType) => {
 		switch (windowType) {
 			case 'webcam':
 				return <WebcamWindow />;
-			case 'settings':
-				return <SettingsWindow />;
+			case 'cv':
+				return <WebcamWindow />;
+			case 'linkedin': {
+				redirect('linkedin');
+				return <WebcamWindow />;
+			}
+			case 'communication': {
+				redirect('communication');
+				return <WebcamWindow />
+			}
 			case 'terminal':
 				return <TerminalWindow />;
+			// case 'experiences':
+			// 	return <ExperiencesWindow />;
+			case '':
+				return <EmptyWindow />;
 			default:
 				return null;
 		}
 	};
 
-	return <>
-		{activeWindow.map((windowType, index) => <span key={index}>{renderActiveWindow(windowType)}</span>)}
-	</>
-}
+	return (
+		<div className="flex lg:h-4/5 lg:flex-row flex-col h-full mt-0 mb-auto">
+			<div className="flex-1"></div>
+			<div className="flex-2">
+				{renderactiveWdw(activeWdw)}
+			</div>
+			<div className="flex-1">
+				<MenuBar />
+			</div>
+		</div>
+	);
+};

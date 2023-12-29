@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'inconsolata': ['Inconsolata', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
       },
     },
   },
