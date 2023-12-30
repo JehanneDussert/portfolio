@@ -25,9 +25,9 @@ export const	Icon = ({ item }) => {
 			<img src={item.img} className="h-1/2"/>
 		</button>
 		{isHovered && (
-			<div className="flex items-center justify-center shadow-2xl">
+			<div className="hidden lg:flex items-center justify-center shadow-2xl">
 				<div className="bg-white bg-opacity-10 h-fit rounded-lg">
-					<p className="text-white m-2">{item.title}</p>
+				<p className="text-white m-2">{item.title}</p>
 				</div>
 			</div>
 		)}

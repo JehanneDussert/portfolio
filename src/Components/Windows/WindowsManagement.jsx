@@ -21,25 +21,17 @@ export const WindowsManagement = () => {
 		);
 	};
 
-	// const	ExperiencesWindow = () => {
-	// 	return (
-	// 		<Window item={menuIcons[2]}>
-	// 			<Experiences />
-	// 		</Window>
-	// 	);
-	// };
-
-	const TerminalWindow = () => {
+	const	ExperiencesWindow = () => {
 		return (
-			<Window item={menuIcons[5]}>
-				<Terminal />
+			<Window item={menuIcons[2]}>
+				<Experiences />
 			</Window>
 		);
 	};
 
 	const EmptyWindow = () => {
 		return (
-			<Window item={menuIcons[6]}>
+			<Window item={menuIcons[7]}>
 				<Empty />
 			</Window>
 		);
@@ -59,10 +51,8 @@ export const WindowsManagement = () => {
 				redirect('communication');
 				return <WebcamWindow />
 			}
-			case 'terminal':
-				return <TerminalWindow />;
-			// case 'experiences':
-			// 	return <ExperiencesWindow />;
+			case 'experiences':
+				return <ExperiencesWindow />;
 			case '':
 				return <EmptyWindow />;
 			default:
@@ -71,12 +61,12 @@ export const WindowsManagement = () => {
 	};
 
 	return (
-		<div className="flex lg:h-4/5 lg:flex-row flex-col h-full mt-0 mb-auto">
-			<div className="flex-1"></div>
-			<div className="flex-2">
+		<div className="flex lg:h-4/5 lg:flex-row flex-col h-fit">
+			<div className="lg:flex-1"></div>
+			<div className="lg:flex-2 lg:h-full">
 				{renderactiveWdw(activeWdw)}
 			</div>
-			<div className="flex-1">
+			<div className="lg:flex-1 lg:mt-0 lg:mb-auto mb-0 mt-auto h-fit">
 				<MenuBar />
 			</div>
 		</div>

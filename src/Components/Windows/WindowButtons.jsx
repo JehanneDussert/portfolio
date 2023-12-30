@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 
 export const WindowButtons = ({ item, onClose, setIsMinimizing }) => {
   const dispatch = useDispatch();
@@ -8,17 +7,13 @@ export const WindowButtons = ({ item, onClose, setIsMinimizing }) => {
 		if (item === "terminal")
 			dispatch({ type: 'RESET_TERMINAL' });
 	  	dispatch({ type: 'CLOSE_ACTIVE_WDW', toDelete: item });
-		  dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: '' });
-		setTimeout(() => {
-	  		onClose();
-	  		dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'terminal' });
-		}, 800);
+		dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: '' });
 	};
 
 	const	handleMinimize = () => {
 		setIsMinimizing(true);
+	  	dispatch({ type: 'RESET_TERMINAL' });
 		setTimeout(() => {
-	  		dispatch({ type: 'RESET_TERMINAL' });
 	  		dispatch({ type: 'CLOSE_ACTIVE_WDW', toDelete: item });
 	  		onClose();
 		}, 500);

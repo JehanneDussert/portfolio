@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-export const	Typewriter = ({ text, delay }) => {
+export const	Typewriter = ({ text, delay, isEcho }) => {
 	const	[currentText, setCurrentText] = useState('');
 	const	[currentIndex, setCurrentIndex] = useState(0);
 	const	dispatch = useDispatch();
@@ -15,8 +15,10 @@ export const	Typewriter = ({ text, delay }) => {
 	  
 		  	return () => clearTimeout(timeout);
 		}
-		else
+		else if (isEcho)
 			dispatch({ type: 'SET_ECHO_COMPLETED' });
+		else
+			dispatch({ type: 'SET_CAT_COMPLETED' });
 	  }, [currentIndex, delay, text]);
   
 	return <>

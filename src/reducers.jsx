@@ -8,6 +8,7 @@ const   initialWdw = {
 
 const	initialTerminal = {
 	echoCompleted: false,
+	catCompleted: false,
 }
 
 const	window = (state = initialWdw, action) => {
@@ -45,6 +46,11 @@ const	terminal = (state = initialTerminal, action) => {
 			return {
 				...state,
 				echoCompleted: true,
+			}
+		case "SET_CAT_COMPLETED":
+			return {
+				...state,
+				catCompleted: true,
 			}
 		case "RESET_TERMINAL":
 			return initialTerminal;

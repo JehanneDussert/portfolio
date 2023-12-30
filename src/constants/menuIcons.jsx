@@ -15,11 +15,11 @@ export const    menuIcons = [
 		title: "Contact",
 		img: contact
 	},
-	// {
-	// 	name: "experiences",
-	// 	title: "Expériences",
-	// 	// img: folder
-	// },
+	{
+		name: "experiences",
+		title: "Expériences",
+		img: folder
+	},
 	{
 		name: "cv",
 		title: "CV",
