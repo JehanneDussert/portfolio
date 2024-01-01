@@ -15,7 +15,7 @@ Passionnée de code, mes domaines de prédilection sont l’<span className="tex
 
 export const    experiences = [
     {
-        institutionTitle: 'Direction Interministérielle du Numérique',
+        institutionTitle: '🇫🇷 Direction Interministérielle du Numérique',
         role: 'Développeuse web',
         date: 'Août 2023 - Aujourd’hui',
         description: <ul className="list-disc list-inside">
@@ -24,7 +24,7 @@ export const    experiences = [
 
     },
     {
-        institutionTitle: 'Ministère de l’Intérieur et des Outre-mer',
+        institutionTitle: '🇫🇷 Ministère de l’Intérieur et des Outre-mer',
         role: "Développeuse R&D et Entrepreneuse d'Intérêt Général",
         date: 'Septembre 2022 - juillet 2023',
         description: <ul className="list-disc list-inside">
@@ -33,5 +33,5 @@ export const    experiences = [
             <li>Management d’une équipe de deux développeurs et d’un game artist.</li>
         </ul>
 
-    }
+    },
 ]
