@@ -1,3 +1,8 @@
+import react from "/react.png";
+import ts from "/ts.png";
+import tailwind from "/tailwind.png";
+import redux from "/redux.png";
+
 export const    bio = <><br/>👋 Bonjour, je m'appelle <span className="text-[#24FF00]">Jehanne Dussert !</span><br/><br/>
 Je suis <span className="text-[#24FF00]">développeuse, entrepreneuse et juriste spécialisée en droit des nouvelles technologies.</span><br/><br/>
 Passionnée de code, mes domaines de prédilection sont l’<span className="text-[#24FF00]">IA, les villes connectées, la gestion des risques.</span><br/><br/>
@@ -20,8 +25,21 @@ export const    experiences = [
         date: 'Août 2023 - Aujourd’hui',
         description: <ul className="list-disc list-inside">
             <li>Développeuse sur le projet Albert, le chatGPT du service public.</li>
-        </ul>
-
+        </ul>,
+        stack: [
+            {
+                img: react
+            },
+            {
+                img: ts
+            },
+            {
+                img: tailwind
+            },
+            {
+                img: redux
+            },
+        ]
     },
     {
         institutionTitle: '🇫🇷 Ministère de l’Intérieur et des Outre-mer',
@@ -31,7 +49,20 @@ export const    experiences = [
             <li>Création d’un jumeau numérique de la ville de Paris.</li>
             <li>Génération et extraction de données synthétiques 3D pour améliorer les performances d’algorithmes de computer vision (ex: détection de piétons).</li>
             <li>Management d’une équipe de deux développeurs et d’un game artist.</li>
-        </ul>
-
+        </ul>,
+        stack: [
+            {
+                img: react
+            },
+            {
+                img: ts
+            },
+            {
+                img: tailwind
+            },
+            {
+                img: redux
+            },
+        ]
     },
 ]

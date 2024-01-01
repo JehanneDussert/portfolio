@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { download, sendMail } from "../../utils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const	Icon = ({ item }) => {
-	const	activeWdw = useSelector((state) => state.window.activeWdw);
 	const	[isHovered, setIsHovered] = useState(false);
 	const	dispatch = useDispatch();
 

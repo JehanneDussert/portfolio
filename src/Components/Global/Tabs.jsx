@@ -18,7 +18,7 @@ export const Tabs = () => {
 			<div className="bg-gradient-to-r from-white via-[#4a4a4a] to-white w-1 h-1 rounded-full mx-2"/>
 		</div>
 		<div className="hidden w-full lg:flex items-end justify-end h-full">
-			<button onClick={handleClick} className="bg-gradient-to-r from-white via-[#dfdfdf] to-white mx-2 text-hite p-2">{tabTitle}</button>
+			<button onClick={handleClick} className="bg-white bg-opacity-10 h-fit rounded-lg mx-2 text-white p-3 hover:bg-opacity-40">{tabTitle}</button>
 		</div>
 	</div>
 }
