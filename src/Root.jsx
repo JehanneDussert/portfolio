@@ -5,7 +5,7 @@ import { WindowsManagement } from "./Components/Windows/WindowsManagement";
 export const	Root = () => {
 	return (
 		<GlobalWrapper>
-			<Header />
+			<span className="lg:block hidden"><Header /></span>
 			<WindowsManagement />
 		</GlobalWrapper>
   )

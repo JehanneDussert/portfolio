@@ -3,7 +3,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 const   initialWdw = {
     bg: "bg-black",
 	bgType: "color",
-	activeWdw: 'webcam'
+	activeWdw: 'terminal'
 }
 
 const	initialTerminal = {

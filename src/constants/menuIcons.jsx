@@ -3,22 +3,16 @@ import folder from "/folder.png";
 import cv from "/pdf.png";
 import linkedIn from "/linkedin.png";
 import pencil from "/pencil.png";
-import terminal from "/terminal.png";
 
 export const    menuIcons = [
 	{
-		name: "webcam",
-		title: "Webcam",
+		name: "terminal",
+		title: "Terminal",
 	},
 	{
 		name: "contact",
 		title: "Contact",
 		img: contact
-	},
-	{
-		name: "experiences",
-		title: "Expériences",
-		img: folder
 	},
 	{
 		name: "cv",
@@ -36,11 +30,11 @@ export const    menuIcons = [
 		img: pencil
 	},
 	{
-		name: "terminal",
-		title: "terminal",
-	},
-	{
 		name: "empty",
 		title: "empty",
+	},
+	{
+		name: "experiences",
+		title: "Expériences",
 	},
 ]

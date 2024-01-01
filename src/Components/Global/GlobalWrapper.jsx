@@ -4,7 +4,7 @@ export const GlobalWrapper = ({ children }) => {
 	const window = useSelector((state) => state.window);
 
 	return (
-		<div className={`w-screen h-screen flex flex-col relative overflow-hidden`}>
+		<div className={`w-screen h-screen flex flex-col relative overflow-hidden bg-gradient-to-r from-[#000000] via-[#2c2c2c] to-[#000000] justify-center items-center`}>
 			<video
 				autoPlay
 				loop
@@ -14,7 +14,7 @@ export const GlobalWrapper = ({ children }) => {
 				<source src="/temporary.mp4" type="video/mp4" />
 				Votre navigateur ne supporte pas la lecture de vidéos.
 			</video>
-			<div className="relative z-10 flex-1">
+			<div className="relative z-10 flex-1 lg:w-full w-11/12">
 				{children}
 			</div>
 		</div>

@@ -7,7 +7,7 @@ export const    Header = () => {
 	const	dispatch = useDispatch();
 
 	const	handleClick = () => {
-		dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'webcam' });
+		dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'terminal' });
 		dispatch({ type: 'RESET_TERMINAL' });
 	}
 

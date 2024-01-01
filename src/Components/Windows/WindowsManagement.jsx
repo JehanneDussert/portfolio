@@ -1,29 +1,27 @@
 import { Window } from "./Window";
 import { menuIcons } from "../../constants/menuIcons";
-import { Terminal } from "./Terminal";
 import { useSelector } from "react-redux";
-import { Camera } from "./Camera";
+import { Terminal } from "./Terminal";
 import { MenuBar } from "../MenuBar/MenuBar";
 import { redirect } from "../../utils";
 import { Experiences } from "./Experiences";
 import { Empty } from "./Empty";
+import { Header } from "../Global/Header";
 
 export const WindowsManagement = () => {
 	const	activeWdw = useSelector((state) => state.window.activeWdw);
 
-	const WebcamWindow = () => {
+	const TerminalWindow = () => {
 		return (
-			<>
-				<Window item={menuIcons[0]}>
-					<Camera />
-				</Window>
-			</>
+			<Window item={menuIcons[0]}>
+				<Terminal />
+			</Window>
 		);
 	};
 
 	const	ExperiencesWindow = () => {
 		return (
-			<Window item={menuIcons[2]}>
+			<Window item={menuIcons[6]}>
 				<Experiences />
 			</Window>
 		);
@@ -31,7 +29,7 @@ export const WindowsManagement = () => {
 
 	const EmptyWindow = () => {
 		return (
-			<Window item={menuIcons[7]}>
+			<Window item={menuIcons[5]}>
 				<Empty />
 			</Window>
 		);
@@ -39,17 +37,17 @@ export const WindowsManagement = () => {
 
 	const renderactiveWdw = (windowType) => {
 		switch (windowType) {
-			case 'webcam':
-				return <WebcamWindow />;
+			case 'terminal':
+				return <TerminalWindow />;
 			case 'cv':
-				return <WebcamWindow />;
+				return <TerminalWindow />;
 			case 'linkedin': {
 				redirect('linkedin');
-				return <WebcamWindow />;
+				return <TerminalWindow />;
 			}
 			case 'communication': {
 				redirect('communication');
-				return <WebcamWindow />
+				return <TerminalWindow />
 			}
 			case 'experiences':
 				return <ExperiencesWindow />;
@@ -61,12 +59,14 @@ export const WindowsManagement = () => {
 	};
 
 	return (
-		<div className="flex lg:h-4/5 lg:flex-row flex-col h-fit">
-			<div className="lg:flex-1"></div>
-			<div className="lg:flex-2 lg:h-full">
+		<div className="flex lg:h-4/5 lg:flex-row flex-col h-full">
+			<div className="lg:flex-1">
+				<span className="bloack lg:hidden"><Header /></span>
+			</div>
+			<div className="lg:flex-2 flex items-center justify-center h-full lg:w-8/12">
 				{renderactiveWdw(activeWdw)}
 			</div>
-			<div className="lg:flex-1 lg:mt-0 lg:mb-auto mb-0 mt-auto h-fit">
+			<div className="lg:flex-1 lg:mt-0 lg:mb-auto mt-4 mb-2">
 				<MenuBar />
 			</div>
 		</div>

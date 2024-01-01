@@ -22,6 +22,6 @@ export const	Typewriter = ({ text, delay, isEcho }) => {
 	  }, [currentIndex, delay, text]);
   
 	return <>
-        <p className="text-white font-inconsolata">{currentText}</p>    
+        <p className="text-white font-inconsolata text-xl">{currentText}</p>    
     </>
 };

@@ -5,7 +5,8 @@
 @layer base {
     .menu-bar {
       @apply w-full;
-      @apply h-full;
+      /* @apply h-full; */
+      @apply mb-0;
       @apply flex;
       @apply flex-row;
       @apply items-center;
@@ -21,14 +22,15 @@
       @apply flex;
       @apply flex-col;
       @apply w-full;
-      @apply mt-0;
+      @apply lg:m-0;
+      @apply lg:my-0;
       @apply mb-auto;
       @apply bg-gradient-to-r from-[#2c2c2c] via-[#6a6a6a] to-[#2c2c2c];
       @apply rounded;
       @apply border;
       @apply border-black;
       @apply shadow-2xl;
-      @apply lg:h-full;
+      @apply h-full;
     }
 }
 
