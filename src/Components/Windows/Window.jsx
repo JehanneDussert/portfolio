@@ -15,12 +15,12 @@ export const Window = ({ children, item }) => {
   const handlers = useSwipeable({
     onSwipedLeft: () => {
 	console.log('ici')
-      dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'terminal' });
+      dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'experiences' });
       dispatch({ type: 'RESET_TERMINAL' });
     },
     onSwipedRight: () => {
 		console.log('ici la')
-      dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'experiences' });
+      dispatch({ type: 'SET_ACTIVE_WDW', nextWdw: 'terminal' });
       dispatch({ type: 'RESET_TERMINAL' });
     },
   });
