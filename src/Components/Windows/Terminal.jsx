@@ -21,13 +21,19 @@ export const    Terminal = () => {
 	return <>
 		<TerminalDecoration>
 			{!terminal.echoCompleted ?
-				<Typewriter text={echoCommand} delay={150} isEcho={true}/> : <p className="text-white font-inconsolata text-xl">echo Hello World!</p>
+				<Typewriter text={echoCommand} delay={150} isEcho={true}/> 
+				: 
+				<p className="text-white font-inconsolata text-xl">{echoCommand}</p>
 			}
 		</TerminalDecoration>
 		{terminal.echoCompleted && <>
 			<p className="text-white font-inconsolata ml-4 text-xl">Hello World!</p>
 			<TerminalDecoration>
-				<Typewriter text={catCommand} delay={150} isEcho={false}/>
+				{!terminal.catCompleted ? 
+					<Typewriter text={catCommand} delay={150} isEcho={false}/> 
+					: 
+					<p className="text-white font-inconsolata text-xl">{catCommand}</p>
+				}
 			</TerminalDecoration>
 			{terminal.catCompleted && <><p className="text-white font-inconsolata mx-4 text-justify text-xl">
 				<span className="lg:block hidden">{bio}</span>
