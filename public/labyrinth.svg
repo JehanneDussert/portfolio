@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 515 280" xmlns="http://www.w3.org/2000/svg">
+  <path style="stroke: rgb(232, 232, 232); fill: none;" d="M 312.84 -0.309 L 312.84 38.407 L 123.32 38.407 L 123.32 84.163 L 23.855 84.163 L 23.855 249.587 L 164.987 249.587 L 164.944 186.048 L 248.244 186.048" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)"/>
+  <path style="fill: none; stroke: rgb(232, 232, 232);" d="M 248.244 166.048 L 343.966 166.048 L 343.944 211.048 L 248.244 211.048 L 248.244 166.048 Z" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)"/>
+  <path style="fill: none; stroke: rgb(232, 232, 232);" d="M 248.244 211.048 L 250.487 211.048 L 343.966 211.048 L 343.966 257.661 L 248.244 257.655 L 248.244 211.048 Z" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)"/>
+  <path style="fill: none; stroke: rgb(232, 232, 232);" d="M 248.244 121.048 L 343.944 121.048 L 343.944 166.048 L 248.244 166.048 L 248.244 121.048 Z" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)"/>
+  <polyline style="fill: none; stroke: rgb(232, 232, 232);" points="343.944 186.068 426.244 186.068 426.244 121.048 516.244 121.048" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)"/>
+  <text style="fill: rgb(172, 172, 172); font-family: Arial, sans-serif; font-size: 6px; white-space: pre;" x="23.72" y="81.349" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)">Mes formations</text>
+  <text style="fill: rgb(172, 172, 172); font-family: Arial, sans-serif; font-size: 6px; white-space: pre;" x="70.605" y="247.155" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)">Mes expériences</text>
+  <text style="fill: rgb(172, 172, 172); font-family: Arial, sans-serif; font-size: 6px; white-space: pre;" x="188.512" y="183.476" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)">Mes réseaux</text>
+  <text style="fill: rgb(172, 172, 172); font-family: Arial, sans-serif; font-size: 6px; white-space: pre;" x="377.161" y="183.01" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -1.4210854715202004e-14)">Services et tarifs</text>
+</svg>
