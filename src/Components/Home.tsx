@@ -3,7 +3,7 @@ import { useTranslation } from '../LanguageContext';
 import { MenuItem } from "./MenuItem";
 import translations from "../translations";
 
-export const Card = () => {
+export const Home = () => {
  	const	{ translate, language } = useTranslation();
 	const	[index, setIndex] = useState(0);
 	const	[items, setItems] = useState(translations[language].items);
@@ -33,13 +33,13 @@ export const Card = () => {
 					<p className="font-anonymous md:text-2xl px-4 text-xl text-center md:pr-8 md:pb-10 pb-6 text-[#3E4261]">
 						{'>'} {desc}
 					</p>
-					<div className="hidden sm:flex w-full flex-row">
+					<div className="hidden sm:flex w-full flex-row ">
 						<MenuItem colNumber={false} />
 						<MenuItem colNumber={true} />
 					</div>
 				</div>
 			</div>
-			<div className="block sm:hidden flex-row w-2/3">
+			<div className="block sm:hidden flex-row sm:w-2/3 w-11/12">
 				<MenuItem colNumber={false} />
 				<MenuItem colNumber={true} />
 			</div>
