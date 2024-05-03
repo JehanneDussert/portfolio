@@ -1,25 +1,28 @@
 export type TranslationKey = 'en' | 'fr';
 
-const translations: Record<TranslationKey, { 
+export const translations: Record<TranslationKey, { 
   welcomeMessage: string,
   education: string,
  experiences: string,
   contact: string,
-  services: string
+  services: string,
+  items: string[],
 }> = {
   en: {
-    welcomeMessage: "Welcome! I'm <strong>Jehanne Dussert</strong> 👋",
+    welcomeMessage: "Hello! I'm <strong>Jehanne Dussert</strong> 👋",
     education: "Education",
-   experiences: "Experience",
+    experiences: "Experience",
     contact: "Contact Me",
     services: "Services and rates",
+    items: ['software engineer 👩🏻‍💻', 'legal expert ⚖️', 'lecturer 🎙️']
   },
   fr: {
     welcomeMessage: "Bienvenue ! Je suis <strong>Jehanne Dussert</strong> 👋",
     education: "Mes formations",
-   experiences: "Mes expériences",
+    experiences: "Mes expériences",
     contact: "Me contacter",
     services: "Mes services et tarifs",
+    items: ['développeuse fullstack 👩🏻‍💻', 'juriste IT ⚖️', 'conférencière 🎙️']
   },
 };
 

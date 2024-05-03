@@ -44,6 +44,7 @@ export const MenuItem: React.FC<{ colNumber: boolean }> = ({ colNumber }) => {
 			onClick: redirectToPrices
 		},
 	];
+	
 	return (
 		<div className="md:w-1/2">
 			{menuItems.map(
@@ -65,7 +66,7 @@ export const MenuItem: React.FC<{ colNumber: boolean }> = ({ colNumber }) => {
 									className="p-2"
 								/>
 							</div>
-							<div className="pl-6 flex items-center w-full">
+							<div className="md:pl-6 pl-2 flex items-center w-full">
 								<p key={index} className="font-anonymous">
 									{item.title}
 								</p>

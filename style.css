@@ -672,8 +672,8 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -685,7 +685,7 @@ video {
 }
 
 .font-teras {
-  font-family: Teras, sans-serif;
+  font-family: Teras, Lilita One, sans-serif;
 }
 
 .text-2xl {
@@ -794,6 +794,10 @@ video {
 
   .md\:pb-10 {
     padding-bottom: 2.5rem;
+  }
+
+  .md\:pl-6 {
+    padding-left: 1.5rem;
   }
 
   .md\:pr-8 {

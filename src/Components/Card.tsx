@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from '../LanguageContext';
 import { MenuItem } from "./MenuItem";
+import translations from "../translations";
 
 export const Card = () => {
-	const	items: string[] = ['développeuse fullstack 👩🏻‍💻', 'juriste IT ⚖️', 'conférencière 🎙️'];
+ 	const	{ translate, language } = useTranslation();
 	const	[index, setIndex] = useState(0);
+	const	[items, setItems] = useState(translations[language].items);
 	const	[desc, setDesc] = useState(items[index]);
- 	const	{ translate } = useTranslation();
 
 	useEffect(() => {
         const intervalId = setInterval(() => {
             setIndex(prevIndex => (prevIndex + 1) % items.length);
-        }, 4000);
+        }, 2000);
 
         return () => clearInterval(intervalId);
     }, [items.length]);
@@ -19,6 +20,10 @@ export const Card = () => {
 	useEffect(() => {
 		setDesc(items[index]);
 	}, [index])
+
+	useEffect(() => {
+		setItems(translations[language].items);
+	}, [language])
 
 	return (
 		<div className="flex md:flex-row flex-col items-center justify-center h-full">
