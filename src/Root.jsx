@@ -1,12 +1,19 @@
-import { GlobalWrapper } from "./Components/Global/GlobalWrapper";
-import { Header } from "./Components/Global/Header";
-import { WindowsManagement } from "./Components/Windows/WindowsManagement";
+import React from "react";
+import { Card } from "./Components/Card";
+import { Header } from "./Components/Header";
+import { Footer } from "./Components/Footer";
+import { LanguageProvider } from "./LanguageContext";
 
-export const	Root = () => {
+export const Root = () => {
 	return (
-		<GlobalWrapper>
-			<span className="lg:block hidden"><Header /></span>
-			<WindowsManagement />
-		</GlobalWrapper>
-  )
-}
+		<LanguageProvider>
+			<div className="h-screen w-screen flex flex-col">
+				<Header />
+				<div className="flex-grow">
+					<Card />
+				</div>
+				<Footer />
+			</div>
+		</LanguageProvider>
+	);
+};
