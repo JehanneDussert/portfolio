@@ -4,8 +4,8 @@ import { BackHome } from "./BackHome";
 
 export const BigCard = ({ items }: { items: MenuItem[] }) => {
 	return (
-        <div className="w-full h-full :py-0 py-4 flex flex-col justify-center items-center">
-            <div className="md:w-1/2 w-11/12">
+        <div className="w-full h-full sm:py-0 py-4 flex flex-col justify-center items-center">
+            <div className="lg:w-1/2 w-11/12">
                 {items.map(
                     (item, index) =>
                             <button
@@ -24,7 +24,7 @@ export const BigCard = ({ items }: { items: MenuItem[] }) => {
                                         className="p-2"
                                     />
                                 </div>
-                                <div className="text-justify md:p-0 p-4 pl-2 flex justify-center w-full flex-col">
+                                <div className="text-justify p-4 pl-2 flex justify-center w-full flex-col">
                                     <p key={index} className="font-anonymous font-bold sm:text-sm text-xs">
                                         {item.title}
                                     </p>
