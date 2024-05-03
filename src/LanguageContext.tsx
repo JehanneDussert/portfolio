@@ -8,7 +8,7 @@ type LanguageContextType = {
   translate: (key: string) => string;
 };
 
-const defaultLanguage: TranslationKey = 'en';
+const defaultLanguage: TranslationKey = 'fr';
 
 const LanguageContext = createContext<LanguageContextType>({
   language: defaultLanguage,
