@@ -30,36 +30,36 @@ export const Experiences = () => {
 
 	const items: MenuItem[] = [
 		{
-			title: translate('Experte scientifique & juridique 🇪🇺'),
-			subtitle: translate("Commission Européenne pour l'Efficacité de la Justice (CEPEJ) - Conseil de l'Europe"),
+			title: translate('Experte scientifique & juridique'),
+			subtitle: translate("🇪🇺 Commission Européenne pour l'Efficacité de la Justice (CEPEJ) - Conseil de l'Europe"),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp",
 			alt: "Memo",
 			onClick: handleCoE,
 		},
 		{
-			title: translate('Experte numérique 🇫🇷'),
-			subtitle: translate("Collège numérique France 2030"),
+			title: translate('Experte numérique'),
+			subtitle: translate("🇫🇷 Collège numérique France 2030"),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp",
 			alt: "Memo",
 			onClick: handleFr2030
 		},
 		{
 			title: translate('Développeuse'),
-			subtitle: translate("Direction Interministérielle du Numérique (DINUM)"),
+			subtitle: translate("🇫🇷 Direction Interministérielle du Numérique (DINUM)"),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Robot.webp",
 			alt: "Woman Technologist",
 			onClick: handleAlbert
 		},
 		{
 			title: translate('Entrepreneuse d’Intérêt Général et développeuse'),
-			subtitle: translate("Ministère de l'Intérieur et des Outre-mer"),
+			subtitle: translate("🇫🇷 Ministère de l'Intérieur et des Outre-mer"),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Woman%20Technologist.webp",
 			alt: "Woman Technologist",
 			onClick: handleTwincity
 		},
 		{
 			title: translate('Chargée de déploiement'),
-			subtitle: translate("Ministère de la Justice"),
+			subtitle: translate("🇫🇷 Ministère de la Justice"),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Classical%20Building.webp",
 			alt: "Purse",
 			onClick: handleAjust
