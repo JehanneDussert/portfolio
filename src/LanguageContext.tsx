@@ -1,10 +1,9 @@
-// LanguageContext.tsx
 import React, { createContext, useState, useContext } from 'react';
 import translations, { TranslationKey } from './translations';
 
 type LanguageContextType = {
   language: TranslationKey;
-  setLanguage: () => void; // Modifiez la signature de la fonction setLanguage
+  setLanguage: () => void; 
   translate: (key: string) => string;
 };
 
@@ -19,7 +18,6 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<TranslationKey>(defaultLanguage);
 
-  // Modifiez la logique de la fonction setLanguage pour basculer entre les langues
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'fr' : 'en');
   };

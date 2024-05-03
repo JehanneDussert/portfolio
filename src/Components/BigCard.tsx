@@ -4,8 +4,8 @@ import { BackHome } from "./BackHome";
 
 export const BigCard = ({ items }: { items: MenuItem[] }) => {
 	return (
-        <div className="w-full h-full sm:py-0 py-4 flex flex-col justify-center items-center">
-            <div className="md:w-1/2 w-11/12 bg-red-200">
+        <div className="w-full h-full :py-0 py-4 flex flex-col justify-center items-center">
+            <div className="md:w-1/2 w-11/12">
                 {items.map(
                     (item, index) =>
                             <button

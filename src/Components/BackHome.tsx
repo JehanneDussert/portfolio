@@ -9,6 +9,6 @@ export const BackHome = () => {
     }
 
 	return (
-        <button className="text-3xl" onClick={handleClick}>🔙</button>
+        <button className="text-3xl md:pt-4 pt-8" onClick={handleClick}>🔙</button>
 	);
 };

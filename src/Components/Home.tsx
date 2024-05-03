@@ -33,13 +33,13 @@ export const Home = () => {
 					<p className="font-anonymous md:text-2xl px-4 text-xl text-center md:pr-8 md:pb-10 pb-6 text-[#3E4261]">
 						{'>'} {desc}
 					</p>
-					<div className="hidden sm:flex w-full flex-row ">
+					<div className="hidden md:flex w-full flex-row ">
 						<MenuItem colNumber={false} />
 						<MenuItem colNumber={true} />
 					</div>
 				</div>
 			</div>
-			<div className="block sm:hidden flex-row sm:w-2/3 w-11/12">
+			<div className="block md:hidden flex-row md:w-2/3 w-11/12">
 				<MenuItem colNumber={false} />
 				<MenuItem colNumber={true} />
 			</div>
