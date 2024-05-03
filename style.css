@@ -658,11 +658,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -820,10 +815,6 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:px-10 {
