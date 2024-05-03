@@ -64,7 +64,7 @@ export const MenuItem: React.FC<{ colNumber: boolean }> = ({ colNumber }) => {
 					(index === elements[0] || index === elements[1]) && (
 						<button
 							type="button"
-							className="flex flex-row p-2 sm:pb-2 my-4 w-full"
+							className="flex flex-row p-2 md:pb-2 my-4 w-full"
 							key={index}
 							onClick={item.onClick}
 						>
