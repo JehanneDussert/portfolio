@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from '../LanguageContext';
+import { useNavigate } from "react-router-dom";
 
 type menuItem = {
 	title: string;
@@ -11,6 +12,15 @@ type menuItem = {
 export const MenuItem: React.FC<{ colNumber: boolean }> = ({ colNumber }) => {
 	const   elements: number[] = colNumber ? [2, 3] : [0, 1];
  	const   { translate } = useTranslation();
+	const	navigate = useNavigate();
+
+	const handleClickExperiences = () => {
+		navigate("/experiences");
+	};
+
+	const handleClickEducation = () => {
+		navigate("/education");
+	};
 
 	function redirectToPrices() {
 		window.open('https://www.malt.fr/profile/jehannedussert', '_blank');
@@ -25,11 +35,13 @@ export const MenuItem: React.FC<{ colNumber: boolean }> = ({ colNumber }) => {
 			title: translate('education'),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp",
 			alt: "Books",
+			onClick: handleClickEducation
 		},
 		{
 			title: translate('experiences'),
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Woman%20Technologist.webp",
 			alt: "Woman Technologist",
+			onClick: handleClickExperiences
 		},
 		{
 			title: translate('contact'),

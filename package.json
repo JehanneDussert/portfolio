@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
     "react-redux": "^9.0.4",
+    "react-router-dom": "^6.23.0",
     "react-swipeable": "^7.0.1",
     "redux": "^5.0.0",
     "typescript": "^5.4.3"

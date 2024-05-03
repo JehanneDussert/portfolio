@@ -12,12 +12,12 @@ export const translations: Record<TranslationKey, {
     welcomeMessage: "Hello! I'm <strong>Jehanne Dussert</strong> 👋",
     education: "Education",
     experiences: "Experience",
-    contact: "Contact Me",
+    contact: "Contact",
     services: "Services and rates",
     items: ['software engineer 👩🏻‍💻', 'legal expert ⚖️', 'lecturer 🎙️']
   },
   fr: {
-    welcomeMessage: "Bienvenue ! Je suis <strong>Jehanne Dussert</strong> 👋",
+    welcomeMessage: "Bonjour ! Je suis <strong>Jehanne Dussert</strong> 👋",
     education: "Mes formations",
     experiences: "Mes expériences",
     contact: "Me contacter",
