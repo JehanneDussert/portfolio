@@ -6,7 +6,7 @@ export const Footer = () => {
    const flag = language === 'en' ? '🇫🇷' : '🇬🇧';
    
 	return (
-		<div className="py-4 md:px-10 px-4 flex flex-row justify-between items-start border-t">
+		<div className="md:py-4 py-2 md:px-10 px-4 flex flex-row justify-between items-start border-t">
 			<button className="text-3xl" onClick={setLanguage}>{flag}</button>
 			<div className="flex-grow"/>
 			<div className="font-teras md:text-4xl text-2xl text-[#3E4261] flex flex-row justify-center items-center h-full">

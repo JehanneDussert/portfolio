@@ -10,7 +10,7 @@ export const Header = () => {
 
 
 	return (
-		<div className="pt-6 md:px-10 px-4 flex flex-row justify-between items-start">
+		<div className="md:pt-6 p-4 md:px-10 flex flex-row justify-between items-start">
 			<button onClick={handleClick} className="font-teras md:text-4xl text-2xl text-[#3E4261]">
 				Jehanne.
 			</button>

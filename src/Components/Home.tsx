@@ -29,8 +29,8 @@ export const Home = () => {
 		<div className="flex md:flex-row flex-col items-center justify-center h-full">
 			<div className="md:w-2/3 w-full md:h-5/6 flex flex-col items-center justify-center">
 				<div className="md:w-2/3 w-full flex items-center justify-center flex-col">
-					<p dangerouslySetInnerHTML={{ __html: translate('welcomeMessage') }} className="font-anonymous w-9/12 md:w-full md:text-3xl pb-4 text-2xl text-center text-[#3E4261]"/>
-					<p className="font-anonymous md:text-2xl px-4 text-xl text-center md:pr-8 md:pb-10 pb-6 text-[#3E4261]">
+					<p dangerouslySetInnerHTML={{ __html: translate('welcomeMessage') }} className="font-anonymous w-9/12 md:w-full md:text-3xl md:pb-4 pb-2 text-xl text-center text-[#3E4261]"/>
+					<p className="font-anonymous md:text-2xl px-4 text-center md:pr-8 md:pb-10 text-[#3E4261]">
 						{'>'} {desc}
 					</p>
 					<div className="hidden md:flex w-full flex-row ">
