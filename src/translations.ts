@@ -38,7 +38,7 @@ export const translations: Record<TranslationKey, {
     experiences: "Experience",
     contact: "Contact",
     services: "Services and rates",
-    items: ['software engineer 👩🏻‍💻', 'legal expert ⚖️', 'lecturer 🎙️'],
+    items: ['full stack software engineer 👩🏻‍💻', 'legal expert ⚖️', 'lecturer 🎙️', 'AI trainer 👩‍🏫'],
     xpItems: [
 		{
 			title: 'Scientific & legal expert',
@@ -112,7 +112,7 @@ export const translations: Record<TranslationKey, {
     experiences: "Mes expériences",
     contact: "Me contacter",
     services: "Mes services et tarifs",
-    items: ['développeuse fullstack 👩🏻‍💻', 'juriste IT ⚖️', 'conférencière 🎙️'],
+    items: ['développeuse full stack 👩🏻‍💻', 'juriste IT ⚖️', 'conférencière 🎙️', 'formatrice en IA 👩‍🏫'],
     xpItems: [
 		{
 			title: 'Experte scientifique & juridique',
