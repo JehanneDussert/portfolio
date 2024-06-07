@@ -56,7 +56,7 @@ export const translations: Record<TranslationKey, {
 		},
 		{
 			title: 'Software engineer',
-			subtitle: "🇫🇷 The interministerial digital department (DINUM)",
+			subtitle: "🇫🇷 Interministerial Digital Directorate (DINUM)",
 			icon: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Robot.webp",
 			alt: "Woman Technologist",
 			onClick: handleAlbert
