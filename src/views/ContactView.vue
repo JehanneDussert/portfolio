@@ -19,13 +19,13 @@
           <span class="link-arrow">→</span>
         </a>
 
-        <a href="https://linkedin.com/in/jehannedussert" target="_blank" rel="noopener" class="link-card" data-hover>
+        <a href="https://www.linkedin.com/in/jehanne-dussert" target="_blank" rel="noopener" class="link-card" data-hover>
           <div class="link-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M5 7v6M5 4.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 13v-3.5A1.5 1.5 0 0 1 11.5 8v0A1.5 1.5 0 0 1 13 9.5V13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
           </div>
           <div>
             <p class="link-title">Connect on LinkedIn</p>
-            <p class="link-sub">linkedin.com/in/jehannedussert</p>
+            <p class="link-sub">https://www.linkedin.com/in/jehanne-dussert</p>
           </div>
           <span class="link-arrow">→</span>
         </a>
