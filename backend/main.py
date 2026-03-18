@@ -6,7 +6,7 @@ app = FastAPI(title="Jehanne Dussert Portfolio API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:4173", "https://portfolio-jtoz.vercel.app/"],
+    allow_origins=["http://localhost:5173", "http://localhost:4173", "https://portfolio-jtoz.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

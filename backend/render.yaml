@@ -7,4 +7,4 @@ services:
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: ALLOWED_ORIGIN
-        value: https://portfolio-jtoz.vercel.app/
+        value: https://portfolio-jtoz.vercel.app
