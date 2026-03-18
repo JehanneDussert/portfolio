@@ -72,7 +72,7 @@ const availability = [
 .eyebrow { display: flex; align-items: center; gap: 12px; font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.5rem; }
 .ew-line { display: block; width: 28px; height: 1px; background: var(--teal); }
 .title { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.06; letter-spacing: -.025em; color: var(--txt); margin-bottom: 1.25rem; }
-.acc { display: block; font-weight: 600; color: var(--teal); }
+.acc { font-weight: 600; color: var(--teal); }
 .desc { font-size: 15px; color: var(--txt-2); line-height: 1.8; margin-bottom: 2.5rem; }
 
 .links { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 2.5rem; }
