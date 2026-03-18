@@ -2,9 +2,9 @@
   <main class="page">
     <div class="inner">
       <div class="eyebrow reveal"><span class="ew-line"></span><span>Let's connect</span></div>
-      <h1 class="title reveal reveal-delay-1">Open to any role<br /><span class="acc">at the intersection</span></h1>
+      <h1 class="title reveal reveal-delay-1">Let's <span class="acc">build</span> something<br /></h1>
       <p class="desc reveal reveal-delay-2">
-        Technical AI work and governance — a position, a mission, an advisory role, or a collaboration.
+        Available for projects at the intersection of AI engineering and governance. Book a call or reach out on LinkedIn.
       </p>
 
       <div class="links reveal reveal-delay-3">
