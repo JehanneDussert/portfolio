@@ -1,6 +1,6 @@
 import type { ContactPayload, ContactResponse, AnalyticsPayload } from '@/types'
 
-const BASE = '/api'
+const BASE = import.meta.env.VITE_API_URL ?? '/api'
 
 export function useApi() {
   async function submitContact(payload: ContactPayload): Promise<ContactResponse> {
