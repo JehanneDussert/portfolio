@@ -25,7 +25,7 @@
           </div>
           <div>
             <p class="link-title">Connect on LinkedIn</p>
-            <p class="link-sub">https://www.linkedin.com/in/jehanne-dussert</p>
+            <p class="link-sub">linkedin.com/in/jehanne-dussert</p>
           </div>
           <span class="link-arrow">→</span>
         </a>
