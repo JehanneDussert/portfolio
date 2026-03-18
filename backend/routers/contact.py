@@ -24,7 +24,9 @@ async def send_notification(form: ContactForm):
     msg["Subject"] = f"[Portfolio] {form.subject}"
     msg.set_content(f"From: {form.name} <{form.email}>\n\n{form.message}")
     with smtplib.SMTP("smtp.office365.com", 587) as s:
+        s.ehlo()
         s.starttls()
+        s.ehlo()
         s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASSWORD"])
         s.send_message(msg)
 
