@@ -1,3 +1,4 @@
+import os
 import logging
 from fastapi import APIRouter, HTTPException, BackgroundTasks
 from models import ContactForm, ContactResponse
@@ -5,24 +6,27 @@ from models import ContactForm, ContactResponse
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-# In production: replace with SMTP (smtplib / FastMail) or a service like Resend
-async def send_notification(form: ContactForm):
-    logger.info(
-        "New contact from %s <%s> — subject: %s",
-        form.name, form.email, form.subject,
-    )
-    # Example SMTP snippet (uncomment and configure):
-    # import smtplib
-    # from email.message import EmailMessage
-    # msg = EmailMessage()
-    # msg["From"] = "portfolio@yourdomain.com"
-    # msg["To"] = "jehanne@yourdomain.com"
-    # msg["Subject"] = f"[Portfolio] {form.subject}"
-    # msg.set_content(f"From: {form.name} <{form.email}>\n\n{form.message}")
-    # with smtplib.SMTP_SSL("smtp.yourprovider.com", 465) as s:
-    #     s.login("user", "password")
-    #     s.send_message(msg)
+CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL")
 
+async def send_notification(form: ContactForm):
+    if not CONTACT_EMAIL:
+        logger.warning("CONTACT_EMAIL not set — logging only")
+        logger.info("Contact from %s <%s> — %s", form.name, form.email, form.subject)
+        return
+
+    # Exemple Gmail via smtplib — ajoute aussi SMTP_USER + SMTP_PASSWORD dans Render
+    import smtplib
+    from email.message import EmailMessage
+    msg = EmailMessage()
+    msg["From"] = os.environ["SMTP_USER"]
+    msg["To"] = CONTACT_EMAIL
+    msg["Reply-To"] = form.email
+    msg["Subject"] = f"[Portfolio] {form.subject}"
+    msg.set_content(f"From: {form.name} <{form.email}>\n\n{form.message}")
+    with smtplib.SMTP("smtp.office365.com", 587) as s:
+        s.starttls()
+        s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASSWORD"])
+        s.send_message(msg)
 
 @router.post("", response_model=ContactResponse)
 async def submit_contact(form: ContactForm, background_tasks: BackgroundTasks):
