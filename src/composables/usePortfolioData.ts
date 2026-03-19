@@ -69,9 +69,9 @@ export function usePortfolioData() {
   }
 
   const skills = {
-    governance: ['Doctrine authoring', 'Risk taxonomy', 'AI Act', 'ANSSI PA-102', 'GDPR', 'Cross-functional coordination'],
+    governance: ['Governance authoring', 'Risk taxonomy', 'AI Act', 'ANSSI PA-102', 'GDPR', 'Cross-functional coordination'],
     deployment: ['LLM API integration', 'Model benchmarking', 'Prompt engineering', 'A/B testing', 'TTFT / latency'],
-    observability: ['Grafana', 'Prometheus', 'Loki', 'Alerting', 'Metrics → doctrine'],
+    observability: ['Grafana', 'Prometheus', 'Loki', 'Alerting', 'Metrics → Governance'],
     engineering: ['Python', 'FastAPI', 'PostgreSQL', 'Vue.js', 'TypeScript', 'Docker', 'Redis'],
   }
 

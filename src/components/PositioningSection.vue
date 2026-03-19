@@ -35,11 +35,11 @@ const cards = [
   },
   {
     tag: 'Observability',
-    title: 'Monitoring → Doctrine',
+    title: 'Monitoring → Governance',
     color: '#7c8cf8',
     bg: 'rgba(124,140,248,0.08)',
     border: 'rgba(124,140,248,0.18)',
-    body: 'Grafana / Prometheus / Loki stack. Production metrics don\'t stop at the dashboard — they feed compliance posture and evolve the doctrine.',
+    body: 'Grafana / Prometheus / Loki stack. Production metrics don\'t stop at the dashboard — they feed compliance posture and evolve the governance.',
     bullets: ['Uptime, errors, user signals', 'Metrics as governance inputs'],
   },
   {

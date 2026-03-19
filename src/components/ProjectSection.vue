@@ -31,7 +31,7 @@
             <li>Docker Compose as source of truth</li>
             <li>CORS errors treated as back-end 500s</li>
             <li>Local SLMs via Ollama for data sovereignty</li>
-            <li>Model routing driven by governance criteria, not performance — each use case resolves to a model via its configured doctrine profile</li>
+            <li>Model routing driven by governance criteria, not performance — each use case resolves to a model via its configured governance profile</li>
             <li>uv sync from back/ · JSON array for model lists</li>
           </ul>
         </div>
