@@ -3,7 +3,7 @@
     <div class="hero-left">
       <div class="eyebrow reveal">
         <span class="ew-line"></span>
-        <span class="ew-text">GenAI Tech Lead · Paris · DGFiP</span>
+        <span class="ew-text">GenAI Tech Lead · Paris (open to relocation) · French Directorate General of Public Finances</span>
       </div>
       <h1 class="title reveal reveal-delay-1">
         AI Governance<br />
