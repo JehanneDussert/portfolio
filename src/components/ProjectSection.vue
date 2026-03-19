@@ -63,6 +63,7 @@ const { project } = usePortfolioData()
   padding: 3px 9px; border-radius: 2px;
 }
 .card-left h3 { font-size: 1.45rem; font-weight: 600; color: var(--txt); margin-bottom: .9rem; line-height: 1.25; letter-spacing: -.01em; }
+.card-left, .card-right { min-width: 0; }
 .card-left p { font-size: 14px; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.5rem; }
 .highlights { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 2rem; }
 .highlights li { font-size: 13px; color: var(--txt-3); line-height: 1.6; padding-left: 1rem; position: relative; }
@@ -81,6 +82,7 @@ const { project } = usePortfolioData()
   padding: 4px 10px; border-radius: 2px;
   background: var(--bg-4); color: var(--txt-2);
   border: 1px solid var(--b-2);
+  word-break: break-word;
 }
 .arch { border-top: 1px solid var(--b); padding-top: 1.5rem; }
 .arch ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
