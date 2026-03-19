@@ -42,7 +42,7 @@ const pubs = [
   { year: '2025', title: 'EU Horizon — Expert Evaluator', sub: 'Assessment of AI proposals: risk, feasibility, impact', url: null },
   { year: '2024', title: 'Council of Europe — AI Advisory Board', sub: '1st AIAB Report on the use of AI in the judiciary · Appointed member (1 of 5)', url: 'https://rm.coe.int/cepej-aiab-2024-4rev5-en-first-aiab-report-2788-0938-9324-v-1/1680b49def' },
   { year: '2024', title: 'Co-author — Public sector & digital transformation', sub: 'Vuibert editions', url: 'https://www.fnac.com/a19819108/Olivier-Bellego-200-fiches-schemas-et-videos-pour-developper-sa-culture-numerique-dans-la-fonction-publique' },
-  { year: '2024', title: 'Fiction — Flaash n°04 · IA', sub: 'La revue culturelle et technique d\'anticipation', url: 'https://www.lalibrairiedesfables.fr/livre/23946623-flaash-n04-ia-automne-2024-la-revue-culturelle-et-technique-d-anticipation-lilia-hassaine-luc-julia-nicolas-gaudemet-ariel-kyrou-flaash' },
+  { year: '2024', title: 'Fiction — Flaash n°04 · IA', sub: 'A cultural and technical journal on futures', url: 'https://www.lalibrairiedesfables.fr/livre/23946623-flaash-n04-ia-automne-2024-la-revue-culturelle-et-technique-d-anticipation-lilia-hassaine-luc-julia-nicolas-gaudemet-ariel-kyrou-flaash' },
   { year: '2024', title: 'GenAI Trainer — CNFPT', sub: 'National Centre for Local Public Administration', url: null },
 ]
 </script>

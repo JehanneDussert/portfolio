@@ -46,7 +46,7 @@ const { project } = usePortfolioData()
 </script>
 
 <style scoped>
-.s { padding: 4rem 1.25rem; border-top: 1px solid var(--b); }
+.s { padding: 3rem 1.25rem; border-top: 1px solid var(--b); }
 .s-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
 .idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
 .s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }
@@ -55,7 +55,7 @@ const { project } = usePortfolioData()
   border-radius: var(--r-lg); padding: 3rem;
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 3.5rem;
 }
-.badges { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
 .badge {
   font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
   letter-spacing: .09em; text-transform: uppercase;
@@ -64,7 +64,7 @@ const { project } = usePortfolioData()
 }
 .card-left h3 { font-size: 1.45rem; font-weight: 600; color: var(--txt); margin-bottom: .9rem; line-height: 1.25; letter-spacing: -.01em; }
 .card-left, .card-right { min-width: 0; }
-.card-left p { font-size: 14px; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.5rem; }
+.card-left p { font-size: 14px; color: var(--txt-2); line-height: 1.75; margin-bottom: 1.25rem; }
 .highlights { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 2rem; }
 .highlights li { font-size: 13px; color: var(--txt-3); line-height: 1.6; padding-left: 1rem; position: relative; }
 .highlights li::before { content: ''; position: absolute; left: 0; top: 8px; width: 3px; height: 3px; border-radius: 50%; background: var(--teal); }

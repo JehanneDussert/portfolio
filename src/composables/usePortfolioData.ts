@@ -40,7 +40,7 @@ export function usePortfolioData() {
     {
       period: '2022 – 2023',
       org: 'DINUM & Ministry of Interior',
-      role: 'Entrepreneur d\'Intérêt Général – Unreal Engine C++ Developer',
+      role: 'Government Innovation Fellow  – Unreal Engine C++ Developer',
       bullets: [
         'Developed synthetic data generator in high-security institutional context.',
         'Led cross-functional team (2 developers, 1 designer).',
