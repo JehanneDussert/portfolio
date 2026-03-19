@@ -3,7 +3,7 @@
     <div class="hero-left">
       <div class="eyebrow reveal">
         <span class="ew-line"></span>
-        <span class="ew-text">GenAI Tech Lead · Paris (open to relocation) · French Directorate General of Public Finances</span>
+        <span class="ew-text">GenAI Tech Lead · Paris · DGFiP</span>
       </div>
       <h1 class="title reveal reveal-delay-1">
         AI Governance<br />
@@ -66,6 +66,12 @@ const stats = [
   display: grid; grid-template-columns: 1.15fr 1fr;
   align-items: center; gap: 5rem;
   padding: 5rem 3rem;
+}
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 1.25rem; min-height: auto; }
+  .hero-right { grid-template-columns: 1fr 1fr; }
+  .dual { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .dual-sep { display: none; }
 }
 .eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
 .ew-line { display: block; width: 28px; height: 1px; background: var(--teal); flex-shrink: 0; }

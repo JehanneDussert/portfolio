@@ -8,7 +8,7 @@
       </div>
       <div class="links">
         <a href="https://www.linkedin.com/in/jehanne-dussert" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/jehannedussert" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/JehanneDussert" target="_blank" rel="noopener">GitHub</a>
         <RouterLink to="/contact">Contact</RouterLink>
       </div>
     </div>

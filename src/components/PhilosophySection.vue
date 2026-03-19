@@ -139,7 +139,7 @@
 
 <style scoped>
 .s {
-  padding: 4.5rem 3rem;
+  padding: 4rem 1.25rem;
   border-top: 1px solid var(--b);
   background: var(--bg-2);
 }
@@ -147,6 +147,7 @@
 .idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
 .s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }
 .content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+@media (max-width: 768px) { .content { grid-template-columns: 1fr; gap: 2rem; } .diagram { display: none; } }
 .text { display: flex; flex-direction: column; gap: 1.1rem; }
 .text p { font-size: 14px; color: var(--txt-2); line-height: 1.85; }
 .text em { font-style: italic; color: var(--txt); }

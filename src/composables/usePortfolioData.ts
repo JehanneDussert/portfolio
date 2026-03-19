@@ -65,7 +65,7 @@ export function usePortfolioData() {
       '11 configurable regulatory evaluation criteria',
       'Vue 3 frontend with ECharts and SSE streaming',
     ],
-    githubUrl: 'https://github.com/jehannedussert/llm_governance_monitoring',
+    githubUrl: 'https://github.com/JehanneDussert/llm_governance_monitoring',
   }
 
   const skills = {

@@ -27,7 +27,7 @@ onUnmounted(() => window.removeEventListener('scroll', fn))
 .nav {
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 3rem; height: 56px;
+  padding: 0 1.25rem; height: 56px;
   background: rgba(18,20,26,0.85);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid transparent;
@@ -39,6 +39,11 @@ onUnmounted(() => window.removeEventListener('scroll', fn))
 .logo-div { color: var(--txt-4); }
 .logo-tag { font-size: 12px; color: var(--txt-3); }
 .links { display: flex; align-items: center; gap: 2.25rem; }
+@media (max-width: 640px) {
+  .logo-sub { display: none; }
+  .links { gap: 1.25rem; }
+  .links a:not(.cta) { display: none; }
+}
 .links a {
   font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase;
   color: var(--txt-3); transition: color .18s; position: relative;

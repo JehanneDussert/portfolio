@@ -37,7 +37,7 @@ const { experiences } = usePortfolioData()
 </script>
 
 <style scoped>
-.s { padding: 5rem 3rem; border-top: 1px solid var(--b); background: var(--bg-2); }
+.s { padding: 4rem 1.25rem; border-top: 1px solid var(--b); background: var(--bg-2); }
 .s-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
 .idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
 .s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }
@@ -45,6 +45,9 @@ const { experiences } = usePortfolioData()
 .item {
   display: grid; grid-template-columns: 185px 1fr;
   gap: 3rem; padding: 2.25rem 0; border-bottom: 1px solid var(--b);
+}
+@media (max-width: 640px) {
+  .item { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.75rem 0; }
 }
 .item:first-child { border-top: 1px solid var(--b); }
 .meta { padding-top: 2px; }
