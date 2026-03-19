@@ -68,3 +68,4 @@ body.cursor-hover #cursor-ring { width: 44px; height: 44px; border-color: var(--
 ::-webkit-scrollbar-track { background: var(--bg-2); }
 ::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--txt-3); }
+p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
