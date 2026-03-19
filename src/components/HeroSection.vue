@@ -53,10 +53,10 @@
 
 <script setup lang="ts">
 const stats = [
-  { num: '95K', label: 'Civil servants', sub: 'Served by deployed GenAI assistants' },
+  { num: '95K', label: 'civil servants', sub: 'LLM systems deployed and monitored across 11 directorates of the French public administration.' },
   { num: '50+', label: 'Use cases', sub: 'Evaluated in national AI doctrine' },
-  { num: '40+', label: 'Contributors', sub: 'Legal, security, compliance, engineering' },
-  { num: '11',  label: 'Directorates', sub: 'Standardised GenAI rollout, DGFiP' },
+  { num: '40+', label: 'contributors coordinated', sub: 'Cross-functional alignment across legal, security, compliance and engineering — no direct authority, full delivery.' },
+  { num: '3', label: 'European mandates', sub: 'Council of Europe AI Advisory Board · EU Horizon expert evaluator · France\'s representative, EU Fiscalis GenAI group.' },
 ]
 </script>
 
