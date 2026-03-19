@@ -36,6 +36,7 @@ export function usePortfolioData() {
         'Presented tool capabilities and limitations in interministerial settings.',
       ],
       impact: 'Improved adoption readiness of France\'s interministerial GenAI platform.',
+      githubUrl: 'https://github.com/JehanneDussert/albert-frontend',
     },
     {
       period: '2022 – 2023',
