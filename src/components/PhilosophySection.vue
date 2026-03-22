@@ -38,7 +38,7 @@
       </div>
 
       <div class="diagram reveal reveal-delay-2">
-        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <svg viewBox="0 0 400 290" xmlns="http://www.w3.org/2000/svg" style="width:100%">
           <defs>
             <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5"
               markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -84,52 +84,52 @@
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">criteria matrix</text>
 
           <!-- Arrows to models -->
-          <line x1="260" y1="90" x2="288" y2="72"
+          <line x1="260" y1="96" x2="288" y2="56"
             stroke="#00d4b8" stroke-width="0.8" marker-end="url(#arr2)" opacity="0.5"/>
-          <line x1="260" y1="102" x2="288" y2="102"
+          <line x1="260" y1="102" x2="288" y2="110"
             stroke="#00d4b8" stroke-width="0.8" marker-end="url(#arr2)" opacity="0.5"/>
-          <line x1="260" y1="114" x2="288" y2="132"
+          <line x1="260" y1="108" x2="288" y2="164"
             stroke="#00d4b8" stroke-width="0.8" marker-end="url(#arr2)" opacity="0.5"/>
 
           <!-- Model A -->
-          <rect x="290" y="56" width="100" height="32" rx="4"
+          <rect x="290" y="40" width="100" height="32" rx="4"
             fill="rgba(232,234,240,0.04)" stroke="rgba(232,234,240,0.1)" stroke-width="0.8"/>
-          <text x="340" y="69" text-anchor="middle"
+          <text x="340" y="53" text-anchor="middle"
             font-family="'JetBrains Mono',monospace" font-size="10" fill="#9da4b8">qwen2.5:1.5b</text>
-          <text x="340" y="81" text-anchor="middle"
+          <text x="340" y="65" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="9" fill="#363d52">low risk · fast</text>
 
           <!-- Model B — highlighted -->
-          <rect x="290" y="86" width="100" height="32" rx="4"
+          <rect x="290" y="94" width="100" height="32" rx="4"
             fill="rgba(0,212,184,0.08)" stroke="rgba(0,212,184,0.3)" stroke-width="0.8"/>
-          <text x="340" y="99" text-anchor="middle"
+          <text x="340" y="107" text-anchor="middle"
             font-family="'JetBrains Mono',monospace" font-size="10" fill="#00d4b8">deepseek-r1</text>
-          <text x="340" y="111" text-anchor="middle"
+          <text x="340" y="119" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="9" fill="#5c6480">traceability · audit</text>
 
           <!-- Model C -->
-          <rect x="290" y="116" width="100" height="32" rx="4"
+          <rect x="290" y="148" width="100" height="32" rx="4"
             fill="rgba(232,234,240,0.04)" stroke="rgba(232,234,240,0.1)" stroke-width="0.8"/>
-          <text x="340" y="129" text-anchor="middle"
+          <text x="340" y="161" text-anchor="middle"
             font-family="'JetBrains Mono',monospace" font-size="10" fill="#9da4b8">gemma3:1b</text>
-          <text x="340" y="141" text-anchor="middle"
+          <text x="340" y="173" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="9" fill="#363d52">privacy · local only</text>
 
           <!-- After: feedback arrow back up -->
-          <path d="M210 128 Q210 175 67 175 Q67 175 67 180"
+          <path d="M210 128 Q210 210 67 210 Q67 210 67 215"
             fill="none" stroke="#f0a500" stroke-width="0.8"
             stroke-dasharray="4 3" marker-end="url(#arr2)" opacity="0.35"/>
 
           <!-- After deployment label -->
-          <rect x="10" y="182" width="115" height="42" rx="5"
+          <rect x="10" y="217" width="115" height="42" rx="5"
             fill="rgba(240,165,0,0.05)" stroke="rgba(240,165,0,0.15)" stroke-width="0.8"/>
-          <text x="67" y="199" text-anchor="middle"
+          <text x="67" y="234" text-anchor="middle"
             font-family="'JetBrains Mono',monospace" font-size="11" fill="#f0a500" font-weight="500">After MEP</text>
-          <text x="67" y="214" text-anchor="middle"
+          <text x="67" y="249" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">metrics refine criteria</text>
 
           <!-- Caption -->
-          <text x="200" y="248" text-anchor="middle"
+          <text x="200" y="282" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#363d52">governance profile = routing logic</text>
         </svg>
       </div>

@@ -10,6 +10,7 @@
       <a href="/#experience">Experience</a>
       <a href="/#project">Project</a>
       <a href="/#skills">Skills</a>
+      <RouterLink to="/contributions" class="nav-contrib">Writing</RouterLink>
       <RouterLink to="/contact" class="cta" data-hover>Contact</RouterLink>
     </div>
   </nav>
@@ -63,4 +64,6 @@ onUnmounted(() => window.removeEventListener('scroll', fn))
 }
 .cta:hover { background: var(--teal-glow) !important; border-color: rgba(0,212,184,.45) !important; }
 .cta::after { display: none !important; }
+.nav-contrib { font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--txt-3); transition: color .18s; }
+.nav-contrib:hover { color: var(--teal); }
 </style>
