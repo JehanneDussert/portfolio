@@ -151,6 +151,7 @@ const contributions = [
 .item-link:hover { border-color: var(--teal); }
 .expand-enter-active, .expand-leave-active { transition: opacity .25s, transform .25s; }
 .expand-enter-from, .expand-leave-to { opacity: 0; transform: translateY(-6px); }
+.item-top { cursor: none; }
 @media (max-width: 768px) {
   .s { padding: 4rem 1.25rem; }
   .item-top { grid-template-columns: 1fr 20px; gap: 1rem; }

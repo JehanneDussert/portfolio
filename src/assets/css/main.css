@@ -56,11 +56,8 @@ button, [data-hover], input, textarea, select, label { cursor: none; }
 #cursor::before { top: 50%; left: 0; width: 12px; height: 1px; margin-top: -0.5px; }
 #cursor::after  { left: 50%; top: 0; width: 1px; height: 12px; margin-left: -0.5px; }
 #cursor-ring { display: none; }
-body.cursor-hover #cursor::before,
-body.cursor-hover #cursor::after { background: var(--amber); }
-body.cursor-hover #cursor::before { width: 16px; }
-body.cursor-hover #cursor::after  { height: 16px; }
-body.cursor-hover #cursor { transform: translate(-50%,-50%) rotate(45deg); }
+body.cursor-hover #cursor::before { background: var(--amber); height: 2px; }
+body.cursor-hover #cursor::after  { background: var(--amber); width: 2px; }
 
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
 .reveal.visible { opacity: 1; transform: none; }
