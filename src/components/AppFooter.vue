@@ -7,9 +7,8 @@
         <span class="tag">AI Governance by Design</span>
       </div>
       <div class="links">
-        <a href="https://linkedin.com/in/jehannedussert" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jehanne-dussert" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/jehannedussert" target="_blank" rel="noopener">GitHub</a>
-        <RouterLink to="/contact">Contact</RouterLink>
       </div>
     </div>
   </footer>

@@ -75,3 +75,9 @@ body.cursor-hover #cursor { transform: translate(-50%,-50%) rotate(45deg); }
 ::-webkit-scrollbar-thumb:hover { background: var(--txt-3); }
 p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 section[id] { scroll-margin-top: 56px; }
+
+@media (hover: none) {
+  #cursor, #cursor-ring { display: none; }
+  body { cursor: auto; }
+  a, button, [data-hover], input, textarea, select, label { cursor: auto; }
+}

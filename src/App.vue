@@ -37,12 +37,18 @@ const mo = new MutationObserver(() =>
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => io?.observe(el))
 )
 onMounted(() => {
+  const isTouchDevice = window.matchMedia('(hover: none)').matches
   dot = document.getElementById('cursor')
   ring = document.getElementById('cursor-ring')
-  rx = window.innerWidth / 2; ry = window.innerHeight / 2
-  window.addEventListener('mousemove', move)
-  window.addEventListener('mouseover', hover)
-  tick()
+  if (!isTouchDevice) {
+    rx = window.innerWidth / 2; ry = window.innerHeight / 2
+    window.addEventListener('mousemove', move)
+    window.addEventListener('mouseover', hover)
+    tick()
+  } else {
+    if (dot) dot.style.display = 'none'
+    if (ring) ring.style.display = 'none'
+  }
   setTimeout(initReveal, 80)
   mo.observe(document.body, { childList: true, subtree: true })
 })
