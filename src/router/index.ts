@@ -5,16 +5,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: () => import('@/views/ContactView.vue'),
-    },
-    {
-      path: '/contributions',
-      name: 'contributions',
-      component: () => import('@/views/ContributionsView.vue'),
-    },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) return savedPosition

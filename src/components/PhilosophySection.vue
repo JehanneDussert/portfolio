@@ -139,7 +139,7 @@
 
 <style scoped>
 .s {
-  padding: 4rem 1.25rem;
+  padding: 5rem 3rem;
   border-top: 1px solid var(--b);
   background: var(--bg-2);
 }

@@ -12,25 +12,6 @@
         </ul>
       </div>
     </div>
-    <div class="pubs reveal">
-      <div class="pubs-head">
-        <span class="idx">—</span>
-        <p class="pubs-title">Publications & roles</p>
-      </div>
-      <div class="pubs-list">
-        <div class="pub-item" v-for="p in pubs" :key="p.title">
-          <span class="pub-year">{{ p.year }}</span>
-          <div>
-            <component
-              :is="p.url ? 'a' : 'p'"
-              v-bind="p.url ? { href: p.url, target: '_blank', rel: 'noopener' } : {}"
-              class="pub-name"
-            >{{ p.title }}</component>
-            <p class="pub-sub">{{ p.sub }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -38,17 +19,11 @@
 import { usePortfolioData } from '@/composables/usePortfolioData'
 const { skills } = usePortfolioData()
 const labels = { governance: 'AI Governance', deployment: 'LLM Deployment', observability: 'Observability', engineering: 'Engineering' }
-const pubs = [
-  { year: '2025', title: 'EU Horizon — Expert Evaluator', sub: 'Assessment of AI proposals: risk, feasibility, impact', url: null },
-  { year: '2024', title: 'Council of Europe — AI Advisory Board', sub: '1st AIAB Report on the use of AI in the judiciary · Appointed member (1 of 5)', url: 'https://rm.coe.int/cepej-aiab-2024-4rev5-en-first-aiab-report-2788-0938-9324-v-1/1680b49def' },
-  { year: '2024', title: 'Co-author — Public sector & digital transformation', sub: 'Vuibert editions', url: 'https://www.fnac.com/a19819108/Olivier-Bellego-200-fiches-schemas-et-videos-pour-developper-sa-culture-numerique-dans-la-fonction-publique' },
-  { year: '2024', title: 'Fiction — Flaash n°04 · IA', sub: 'A cultural and technical journal on futures', url: 'https://www.lalibrairiedesfables.fr/livre/23946623-flaash-n04-ia-automne-2024-la-revue-culturelle-et-technique-d-anticipation-lilia-hassaine-luc-julia-nicolas-gaudemet-ariel-kyrou-flaash' },
-  { year: '2024', title: 'GenAI Trainer — CNFPT', sub: 'National Centre for Local Public Administration', url: null },
-]
 </script>
 
 <style scoped>
-.s { padding: 4rem 1.25rem; border-top: 1px solid var(--b); background: var(--bg-2); }
+.s { padding: 5rem 3rem; border-top: 1px solid var(--b); background: var(--bg-2); }
+@media (max-width: 768px) { .s { padding: 4rem 1.25rem; } }
 .s-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
 .idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
 .s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }
@@ -63,24 +38,5 @@ const pubs = [
   transition: color .15s, padding-left .15s;
 }
 .col li:hover { color: var(--teal); padding-left: 4px; }
-.pubs { border-top: 1px solid var(--b-3); padding-top: 2.5rem; }
-.pubs-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
-.pubs-title { font-size: 13px; font-weight: 500; color: var(--txt-3); text-transform: uppercase; letter-spacing: .08em; }
-.pubs-list { display: flex; flex-direction: column; }
-.pub-item {
-  display: grid; grid-template-columns: 68px 1fr; gap: 2rem;
-  padding: .9rem 0; border-bottom: 1px solid var(--b); align-items: start;
-}
-.pub-year { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); padding-top: 2px; }
-.pub-name {
-  font-size: 13.5px; font-weight: 500; color: var(--txt); margin-bottom: 2px;
-  display: block; text-decoration: none;
-}
-a.pub-name {
-  color: var(--txt);
-  border-bottom: 1px solid var(--b-2);
-  transition: color .18s, border-color .18s;
-}
-a.pub-name:hover { color: var(--teal); border-color: rgba(0,212,184,.3); }
-.pub-sub { font-size: 12.5px; color: var(--txt-3); }
+
 </style>

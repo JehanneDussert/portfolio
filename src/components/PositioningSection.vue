@@ -55,7 +55,8 @@ const cards = [
 </script>
 
 <style scoped>
-.s { padding: 4rem 1.25rem; border-top: 1px solid var(--b); }
+.s { padding: 5rem 3rem; border-top: 1px solid var(--b); }
+@media (max-width: 768px) { .s { padding: 4rem 1.25rem; } }
 .s-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
 .idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
 .s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }

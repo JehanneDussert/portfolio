@@ -46,39 +46,39 @@ const { project } = usePortfolioData()
 </script>
 
 <style scoped>
-.s { padding: 3rem 1.25rem; border-top: 1px solid var(--b); }
+.s { padding: 5rem 3rem; border-top: 1px solid var(--b); background: #0a0c12; }
+@media (max-width: 768px) { .s { padding: 4rem 1.25rem; } }
 .s-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
-.idx { font-family: var(--ff-mono); font-size: 11px; color: var(--txt-4); letter-spacing: .1em; }
-.s-head h2 { font-size: 1.55rem; font-weight: 600; color: var(--txt); letter-spacing: -.01em; }
+.idx { font-family: var(--ff-mono); font-size: 11px; color: rgba(232,234,240,.3); letter-spacing: .1em; }
+.s-head h2 { font-size: 1.55rem; font-weight: 600; color: #e8eaf0; letter-spacing: -.01em; }
 
 .card {
-  background: var(--bg-3); border: 1px solid var(--b-2);
-  border-radius: var(--r-lg); padding: 2rem;
   display: flex; flex-direction: column; gap: 2rem;
 }
 
 /* Desktop : side by side */
 @media (min-width: 860px) {
-  .card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; padding: 3rem; }
+  .card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
 }
 
 .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
 .badge {
   font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
   letter-spacing: .09em; text-transform: uppercase;
-  color: var(--txt-3); border: 1px solid var(--b-2);
   padding: 3px 9px; border-radius: 2px;
 }
+.badge:nth-child(1) { color: var(--teal); background: rgba(0,212,184,.08); border: 1px solid rgba(0,212,184,.25); }
+.badge:nth-child(2) { color: var(--amber); background: rgba(240,165,0,.08); border: 1px solid rgba(240,165,0,.25); }
 .card-left h3 {
-  font-size: 1.3rem; font-weight: 600; color: var(--txt);
+  font-size: 1.3rem; font-weight: 600; color: #fff;
   margin-bottom: .75rem; line-height: 1.25; letter-spacing: -.01em;
 }
-.card-left p { font-size: 14px; color: var(--txt-2); line-height: 1.75; margin-bottom: 1.25rem; }
+.card-left p { font-size: 14px; color: rgba(232,234,240,.65); line-height: 1.75; margin-bottom: 1.25rem; }
 .card-left, .card-right { min-width: 0; }
 
 .highlights { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 1.75rem; }
 .highlights li {
-  font-size: 13px; color: var(--txt-3); line-height: 1.6;
+  font-size: 13px; color: rgba(232,234,240,.5); line-height: 1.6;
   padding-left: 1rem; position: relative;
 }
 .highlights li::before {
@@ -93,26 +93,26 @@ const { project } = usePortfolioData()
 }
 .gh-link:hover { color: var(--teal-2); border-color: rgba(0,184,158,.4); }
 
-.card-right { border-top: 1px solid var(--b); padding-top: 1.5rem; }
-@media (min-width: 860px) { .card-right { border-top: none; padding-top: 0; } }
+.card-right { border-top: 1px solid rgba(232,234,240,.08); padding-top: 1.5rem; }
+@media (min-width: 860px) { .card-right { border-top: none; padding-top: 0; border-left: 1px solid rgba(232,234,240,.08); padding-left: 3rem; } }
 
 .rl {
   font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
   text-transform: uppercase; letter-spacing: .1em;
-  color: var(--txt-4); margin-bottom: .85rem;
+  color: rgba(232,234,240,.35); margin-bottom: .85rem;
 }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.75rem; }
 .tech {
   font-family: var(--ff-mono); font-size: 11px;
   padding: 4px 10px; border-radius: 2px;
-  background: var(--bg-4); color: var(--txt-2);
-  border: 1px solid var(--b-2);
+  background: rgba(255,255,255,.05); color: rgba(232,234,240,.65);
+  border: 1px solid rgba(255,255,255,.1);
 }
-.arch { border-top: 1px solid var(--b); padding-top: 1.5rem; }
+.arch { border-top: 1px solid rgba(232,234,240,.08); padding-top: 1.5rem; }
 .arch ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .arch li {
-  font-size: 12.5px; color: var(--txt-3); line-height: 1.6;
+  font-size: 12.5px; color: rgba(232,234,240,.45); line-height: 1.6;
   padding-left: 1rem; position: relative;
 }
-.arch li::before { content: '—'; position: absolute; left: 0; color: var(--txt-4); }
+.arch li::before { content: '—'; position: absolute; left: 0; color: rgba(232,234,240,.2); }
 </style>
