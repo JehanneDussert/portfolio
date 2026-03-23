@@ -37,7 +37,7 @@ const mo = new MutationObserver(() =>
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => io?.observe(el))
 )
 onMounted(() => {
-  const isTouchDevice = window.matchMedia('(hover: none)').matches
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
   dot = document.getElementById('cursor')
   ring = document.getElementById('cursor-ring')
   if (!isTouchDevice) {
