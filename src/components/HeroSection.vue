@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-photo reveal reveal-delay-1">
       <div class="photo-wrap">
-        <img src="/heroprofile.jpg" alt="Jehanne Dussert speaking" class="photo" />
+        <img src="/hero.jpg" alt="Jehanne Dussert speaking" class="photo" />
       </div>
     </div>
     <div class="hero-right-content">
