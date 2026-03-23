@@ -1,19 +1,31 @@
 <template>
   <section class="hero">
+    <!-- Desktop: photo left -->
     <div class="hero-photo reveal reveal-delay-1">
       <div class="photo-wrap">
         <img src="/hero.jpg" alt="Jehanne Dussert speaking" class="photo" />
       </div>
     </div>
-    <div class="hero-right-content">
+
+    <div class="hero-content">
       <div class="eyebrow reveal">
         <span class="ew-line"></span>
         <span class="ew-text">GenAI Tech Lead · Paris (open to relocation) · French Tax Administration (DGFiP)</span>
       </div>
-      <h1 class="title reveal reveal-delay-1">
-        AI Governance<br />
-        <span class="title-accent">by Design</span>
-      </h1>
+
+      <!-- Mobile: title + photo side by side -->
+      <div class="title-row">
+        <h1 class="title reveal reveal-delay-1">
+          AI Governance<br />
+          <span class="title-accent">by Design</span>
+        </h1>
+        <div class="photo-mobile">
+          <div class="photo-wrap-sm">
+            <img src="/hero.jpg" alt="Jehanne Dussert" class="photo" />
+          </div>
+        </div>
+      </div>
+
       <p class="desc reveal reveal-delay-2">
         Deploying and monitoring LLM-based systems at national scale (95K users),
         at the intersection of software engineering, observability, and institutional governance.
@@ -55,26 +67,32 @@ const stats = [
 </script>
 
 <style scoped>
+* { box-sizing: border-box; }
+
 .hero {
-  min-height: calc(100vh - 56px);
+  height: calc(100vh - 56px);
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
   align-items: center;
   gap: 4rem;
   padding: 4rem 3rem;
+  overflow: hidden;
 }
 
-.eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; flex-wrap: wrap; }
 .ew-line { display: block; width: 28px; height: 1px; background: var(--teal); flex-shrink: 0; }
-.ew-text { font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: .1em; text-transform: uppercase; }
+.ew-text { font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: .08em; text-transform: uppercase; }
+
+.title-row { display: block; }
+.photo-mobile { display: none; }
 
 .title {
-  font-size: clamp(2.6rem,4vw,4.2rem); font-weight: 300;
+  font-size: clamp(2.4rem,3.5vw,4rem); font-weight: 300;
   line-height: 1.06; letter-spacing: -.025em; color: var(--txt);
   margin-bottom: 1.5rem;
 }
 .title-accent { display: block; font-weight: 600; color: var(--teal); }
-.desc { font-size: 15px; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.75rem; }
+.desc { font-size: 14px; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.75rem; }
 
 .dual { display: flex; align-items: center; gap: 12px; margin-bottom: 1.75rem; flex-wrap: wrap; }
 .dual-pill {
@@ -90,7 +108,6 @@ const stats = [
 .pill-sub { font-size: 11px; color: var(--txt-3); }
 .dual-sep { font-size: 14px; color: var(--txt-4); font-weight: 300; }
 
-/* stats inline sous les pills */
 .stats-inline {
   display: flex; gap: 0;
   border: 1px solid var(--b); border-radius: var(--r-md);
@@ -102,13 +119,10 @@ const stats = [
   border-right: 1px solid var(--b);
 }
 .stat-item:last-child { border-right: none; }
-.stat-num {
-  font-size: 1.2rem; font-weight: 600;
-  color: var(--teal); letter-spacing: -.02em; line-height: 1;
-}
+.stat-num { font-size: 1.2rem; font-weight: 600; color: var(--teal); letter-spacing: -.02em; line-height: 1; }
 .stat-label { font-size: 10px; color: var(--txt-3); text-transform: uppercase; letter-spacing: .06em; }
 
-.actions { display: flex; align-items: center; gap: 1rem; }
+.actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
   display: inline-flex; align-items: center;
   padding: 10px 22px; background: var(--teal); color: #000;
@@ -123,11 +137,11 @@ const stats = [
 }
 .btn-ghost:hover { color: var(--teal); border-color: var(--teal); }
 
-/* photo — grande, pleine hauteur droite */
-.hero-photo { display: flex; align-items: center; }
+/* Desktop photo */
+.hero-photo { display: flex; align-items: center; overflow: hidden; }
 .photo-wrap {
   width: 100%; border-radius: var(--r-lg);
-  overflow: hidden; aspect-ratio: 3/4; max-height: 65vh;
+  overflow: hidden; aspect-ratio: 3/4; max-height: 70vh;
 }
 .photo {
   width: 100%; height: 100%;
@@ -137,12 +151,22 @@ const stats = [
 }
 .photo-wrap:hover .photo { filter: grayscale(0%); }
 
+/* Mobile */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding: 3rem 1.25rem; min-height: auto; gap: 2.5rem; }
-  .hero-photo { height: auto; }
-  .photo-wrap { min-height: 260px; aspect-ratio: 3/2; }
-  .photo { object-position: center 10%; }
-  .dual { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
+    height: calc(100vh - 56px);
+    gap: 1.5rem;
+    overflow: hidden;
+    align-content: center;
+  }
+  .hero-photo { display: none; }
+  .photo-mobile { display: none; }
+  .title { font-size: clamp(1.8rem,7vw,2.4rem); }
+  .dual { flex-wrap: wrap; gap: 8px; }
   .dual-sep { display: none; }
+  .stats-inline { display: none; }
+  .ew-text { font-size: 10px; }
 }
 </style>
