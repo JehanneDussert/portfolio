@@ -78,7 +78,7 @@ export function usePortfolioData() {
       'Local SLMs via Ollama — data sovereignty by design',
       'Vue 3 frontend with ECharts and SSE streaming',
     ],
-    githubUrl: 'https://github.com/jehannedussert/llm_governance_monitoring',
+    githubUrl: 'https://github.com/JehanneDussert/govllm',
   }
 
   const skills = {
