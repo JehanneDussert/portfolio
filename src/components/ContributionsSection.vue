@@ -76,7 +76,7 @@ const contributions = [
   {
     year: '2024', org: 'Vuibert',
     title: 'Co-author — Public Sector & Digital Transformation',
-    sub: '200 fiches, schémas et vidéos pour développer sa culture numérique dans la fonction publique',
+    sub: '200 fact sheets, diagrams and videos to develop digital literacy in the public sector',
     intro: 'Contributed several chapters to a comprehensive reference guide for public sector professionals navigating digital transformation. Covered both technical and regulatory dimensions of digital public services.',
     args: [
       'Video surveillance and digital oversight in public spaces.',
