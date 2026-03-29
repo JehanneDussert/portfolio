@@ -25,12 +25,5 @@ export default defineConfig({
   build: {
     target: 'es2015',
     cssCodeSplit: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vue: ['vue', 'vue-router', 'pinia'],
-      },
-    },
   },
-}
 })
