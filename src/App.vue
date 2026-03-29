@@ -13,6 +13,7 @@ let dot: HTMLElement | null = null
 let ring: HTMLElement | null = null
 let rx = 0, ry = 0, mx = 0, my = 0, raf = 0
 let io: IntersectionObserver | null = null
+let mo: MutationObserver | null = null
 
 function move(e: MouseEvent) {
   mx = e.clientX; my = e.clientY
@@ -33,9 +34,7 @@ function initReveal() {
   }, { threshold: 0.1 })
   document.querySelectorAll('.reveal').forEach(el => io?.observe(el))
 }
-const mo = new MutationObserver(() =>
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => io?.observe(el))
-)
+
 onMounted(() => {
   const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
   dot = document.getElementById('cursor')
@@ -50,11 +49,15 @@ onMounted(() => {
     if (ring) ring.style.display = 'none'
   }
   setTimeout(initReveal, 80)
+  mo = new MutationObserver(() =>
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => io?.observe(el))
+  )
   mo.observe(document.body, { childList: true, subtree: true })
 })
+
 onUnmounted(() => {
   window.removeEventListener('mousemove', move)
   window.removeEventListener('mouseover', hover)
-  cancelAnimationFrame(raf); io?.disconnect(); mo.disconnect()
+  cancelAnimationFrame(raf); io?.disconnect(); mo?.disconnect()
 })
 </script>
