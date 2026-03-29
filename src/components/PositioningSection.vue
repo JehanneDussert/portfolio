@@ -48,7 +48,7 @@ const cards = [
     color: 'var(--amber)',
     bg: 'var(--amber-dim)',
     border: 'rgba(240,165,0,0.18)',
-    body: 'National doctrine, risk taxonomies, supervision models — built with 40+ cross-functional contributors and grounded in production reality.',
+    body: 'National governance, risk taxonomies, supervision models — built with 40+ cross-functional contributors and grounded in production reality.',
     bullets: ['AI Act, ANSSI PA-102, GDPR', '3-level supervision model'],
   },
 ]

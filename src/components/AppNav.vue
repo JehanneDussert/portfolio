@@ -10,9 +10,9 @@
     <div class="links desktop">
       <a href="/#positioning">Positioning</a>
       <a href="/#experience">Experience</a>
-      <a href="/#project">Project</a>
+      <a href="/#govllm">Govllm</a>
       <a href="/#skills">Skills</a>
-      <a href="/#contributions">Writing</a>
+      <a href="/#contributions">Contributions</a>
       <a href="/#contact" class="cta" data-hover>Contact</a>
     </div>
 
@@ -29,7 +29,7 @@
         <div class="mobile-menu" @click.stop>
           <a href="/#positioning" @click="open = false">Positioning</a>
           <a href="/#experience" @click="open = false">Experience</a>
-          <a href="/#project" @click="open = false">Project</a>
+          <a href="/#govllm" @click="open = false">Govllm</a>
           <a href="/#skills" @click="open = false">Skills</a>
           <a href="/#contributions" @click="open = false">Writing</a>
           <a href="/#contact" @click="open = false" class="mobile-cta">Contact</a>

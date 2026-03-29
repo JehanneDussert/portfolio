@@ -7,7 +7,7 @@ export function usePortfolioData() {
       org: 'French Tax Administration (DGFiP)',
       role: 'Tech Lead – Generative AI & AI Governance Coordinator',
       bullets: [
-        'Authored national AI usage doctrine deployed across 11 directorates, covering 50+ evaluated use cases — 3-level supervision model, risk taxonomy, tool and data tiers.',
+        'Authored national AI governance deployed across 11 directorates, covering 50+ evaluated use cases — 3-level supervision model, risk taxonomy, tool and data tiers.',
         'Coordinated 40+ cross-functional contributors (legal, security, compliance, engineering) to produce governance frameworks that hold in production.',
         'Deployed internal GenAI assistants serving 95,000+ civil servants; integrated open-source models and designed prompt systems for operational workflows.',
         'Built monitoring and alerting stack (Grafana/Prometheus): uptime, latency, TTFT, errors, user signals.',
@@ -41,7 +41,7 @@ export function usePortfolioData() {
     {
       period: '2023 – 2024',
       org: 'Interministerial Digital Directorate (DINUM)',
-      role: 'Generative AI Product Engineer (Frontend)',
+      role: 'Generative AI Product Engineer',
       bullets: [
         'Led frontend implementation of AI-assisted workflows.',
         'Proposed product features based on multi-ministry feedback.',
@@ -56,7 +56,7 @@ export function usePortfolioData() {
       bullets: [
         'Developed synthetic data generator in high-security institutional context.',
         'Led cross-functional team (2 developers, 1 designer).',
-        'Drafted governance protocol for the project.',
+        'Designed governance framework for synthetic data generation: use cases, co-decision methodology, and data extraction protocol for the Paris digital twin (3D semantic segmentation).',
       ],
       impact: 'Delivered a data generation tool for public administration needs.',
       githubUrl: 'https://github.com/twin-city/unreal-project',
@@ -66,13 +66,13 @@ export function usePortfolioData() {
   const project: Project = {
     title: 'LLM Governance Monitoring Platform',
     description:
-      'Self-hosted LLMOps platform for observability and regulatory governance of language models in production. Configurable LLM judge mapped to the AI Act, ANSSI PA-102, and OWASP LLM Top 10.',
+      'How do you justify a model choice six months after go-live? govllm is my attempt to answer that — a self-hosted governance monitoring stack built for regulated environments. Configurable LLM judge mapped to the AI Act, ANSSI PA-102, and OWASP LLM Top 10.',
     stack: [
       'FastAPI', 'Redis pub/sub', 'LiteLLM', 'Langfuse',
       'Prometheus', 'Grafana', 'Ollama', 'Vue 3', 'TypeScript', 'Docker Compose',
     ],
     highlights: [
-      'Governance-driven model routing — each use case resolves to a model via its configured doctrine profile',
+      'Governance-driven model routing — each use case resolves to a model via its configured governance profile',
       '4 built-in governance profiles: AI Act Compliance, Data Protection, Security, Accessibility & Inclusion',
       '11 configurable evaluation criteria with per-profile weights',
       'Local SLMs via Ollama — data sovereignty by design',
@@ -82,9 +82,9 @@ export function usePortfolioData() {
   }
 
   const skills = {
-    governance: ['Doctrine authoring', 'Risk taxonomy', 'AI Act', 'ANSSI PA-102', 'GDPR', 'Cross-functional coordination'],
+    governance: ['Governance authoring', 'Risk taxonomy', 'AI Act', 'ANSSI PA-102', 'GDPR', 'Cross-functional coordination'],
     deployment: ['LLM API integration', 'Model benchmarking', 'Prompt engineering', 'A/B testing', 'TTFT / latency'],
-    observability: ['Grafana', 'Prometheus', 'Loki', 'Alerting', 'Metrics → doctrine'],
+    observability: ['Grafana', 'Prometheus', 'Loki', 'Alerting', 'Metrics → governance'],
     engineering: ['Python', 'FastAPI', 'PostgreSQL', 'Vue.js', 'TypeScript', 'Docker', 'Redis'],
   }
 

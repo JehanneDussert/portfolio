@@ -51,7 +51,7 @@
           <rect x="10" y="10" width="115" height="42" rx="5"
             fill="rgba(240,165,0,0.08)" stroke="rgba(240,165,0,0.25)" stroke-width="0.8"/>
           <text x="67" y="27" text-anchor="middle"
-            font-family="'JetBrains Mono',monospace" font-size="11" fill="#f0a500" font-weight="500">Before MEP</text>
+            font-family="'JetBrains Mono',monospace" font-size="11" fill="#f0a500" font-weight="500">Before go-live</text>
           <text x="67" y="42" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">Intuition · risk model</text>
 
@@ -60,17 +60,17 @@
             stroke="#f0a500" stroke-width="1" marker-end="url(#arr2)" opacity="0.5"/>
 
           <!-- Governance criteria box -->
-          <rect x="10" y="76" width="115" height="52" rx="5"
+          <rect x="0" y="76" width="130" height="52" rx="5"
             fill="rgba(124,140,248,0.08)" stroke="rgba(124,140,248,0.25)" stroke-width="0.8"/>
           <text x="67" y="95" text-anchor="middle"
-            font-family="'JetBrains Mono',monospace" font-size="11" fill="#7c8cf8" font-weight="500">Doctrine profile</text>
+            font-family="'JetBrains Mono',monospace" font-size="11" fill="#7c8cf8" font-weight="500">Governance profile</text>
           <text x="67" y="110" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">criteria · thresholds</text>
           <text x="67" y="122" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">supervision level</text>
 
           <!-- Arrow right to router -->
-          <line x1="125" y1="102" x2="158" y2="102"
+          <line x1="130" y1="102" x2="158" y2="102"
             stroke="#7c8cf8" stroke-width="1" marker-end="url(#arr2)" opacity="0.6"/>
 
           <!-- Router -->
@@ -124,7 +124,7 @@
           <rect x="10" y="217" width="115" height="42" rx="5"
             fill="rgba(240,165,0,0.05)" stroke="rgba(240,165,0,0.15)" stroke-width="0.8"/>
           <text x="67" y="234" text-anchor="middle"
-            font-family="'JetBrains Mono',monospace" font-size="11" fill="#f0a500" font-weight="500">After MEP</text>
+            font-family="'JetBrains Mono',monospace" font-size="11" fill="#f0a500" font-weight="500">After go-live</text>
           <text x="67" y="249" text-anchor="middle"
             font-family="'Inter',sans-serif" font-size="10" fill="#5c6480">metrics refine criteria</text>
 
