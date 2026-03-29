@@ -59,10 +59,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-type UseCase = 'General' | 'Translation' | 'Code' | 'Admin'
+type UseCase = 'General' | 'Translation' | 'Code'
 type ScoreMap = Record<UseCase, number>
 
-const USE_CASES: UseCase[] = ['General', 'Translation', 'Code', 'Admin']
+const USE_CASES: UseCase[] = ['General', 'Translation', 'Code']
 
 const profiles = [
   {
@@ -71,7 +71,7 @@ const profiles = [
     criteria: ['transparency', 'traceability', 'human oversight', 'risk documentation', 'accuracy'],
     active: [0, 1, 2],
     note: '→ AI Act Art. 9 — ongoing risk management required',
-    scores: { General: 0.72, Translation: 0.41, Code: 0.88, Admin: 0.65 } as ScoreMap,
+    scores: { General: 0.72, Translation: 0.41, Code: 0.88 } as ScoreMap,
   },
   {
     name: 'Data protection',
@@ -79,7 +79,7 @@ const profiles = [
     criteria: ['data minimisation', 'consent', 'purpose limitation', 'retention', 'anonymisation'],
     active: [0, 2, 4],
     note: '→ GDPR Art. 5 — lawfulness, fairness, transparency',
-    scores: { General: 0.55, Translation: 0.80, Code: 0.92, Admin: 0.38 } as ScoreMap,
+    scores: { General: 0.55, Translation: 0.80, Code: 0.92 } as ScoreMap,
   },
   {
     name: 'Security',
@@ -87,7 +87,7 @@ const profiles = [
     criteria: ['prompt injection', 'output validation', 'access control', 'audit log', 'sandboxing'],
     active: [0, 1, 3],
     note: '→ ANSSI — hardening & incident traceability',
-    scores: { General: 0.44, Translation: 0.20, Code: 0.95, Admin: 0.60 } as ScoreMap,
+    scores: { General: 0.44, Translation: 0.20, Code: 0.95 } as ScoreMap,
   },
   {
     name: 'Accessibility',
@@ -95,23 +95,23 @@ const profiles = [
     criteria: ['plain language', 'reading level', 'inclusivity', 'RGAA', 'alt text'],
     active: [0, 2, 3],
     note: '→ RGAA — accessibility for all public sector outputs',
-    scores: { General: 0.88, Translation: 0.76, Code: 0.30, Admin: 0.91 } as ScoreMap,
+    scores: { General: 0.88, Translation: 0.76, Code: 0.30 } as ScoreMap,
   },
 ]
 
 const currentIdx = ref(0)
 const activeProfile = computed(() => profiles[currentIdx.value])
 
-const currentScores = ref<ScoreMap>({ General: 0.72, Translation: 0.41, Code: 0.88, Admin: 0.65 })
+const currentScores = ref<ScoreMap>({ General: 0.72, Translation: 0.41, Code: 0.88 })
 const targetScores = ref<ScoreMap>({ ...currentScores.value })
 const displayedScores = ref<ScoreMap>({ ...currentScores.value })
 
 const histories = ref<Record<UseCase, number[]>>({
-  General: [], Translation: [], Code: [], Admin: [],
+  General: [], Translation: [], Code: [],
 })
 
 const canvasRefs = ref<Record<UseCase, HTMLCanvasElement | null>>({
-  General: null, Translation: null, Code: null, Admin: null,
+  General: null, Translation: null, Code: null,
 })
 
 function setCanvasRef(uc: UseCase) {
