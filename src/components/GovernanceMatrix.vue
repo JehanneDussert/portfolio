@@ -25,9 +25,9 @@
       </div>
 
       <div class="gm-rows">
-        <div v-for="uc in useCases" :key="uc" class="gm-row">
+        <div v-for="uc in USE_CASES" :key="uc" class="gm-row">
           <span class="gm-uc">{{ uc }}</span>
-          <canvas :ref="el => canvases[uc] = el" class="gm-canvas" height="28" />
+          <canvas :ref="setCanvasRef(uc)" class="gm-canvas" height="28" />
           <div class="gm-bar-wrap">
             <div
               class="gm-bar"
@@ -57,7 +57,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, reactive } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+type UseCase = 'General' | 'Translation' | 'Code' | 'Admin'
+type ScoreMap = Record<UseCase, number>
+
+const USE_CASES: UseCase[] = ['General', 'Translation', 'Code', 'Admin']
 
 const profiles = [
   {
@@ -66,7 +71,7 @@ const profiles = [
     criteria: ['transparency', 'traceability', 'human oversight', 'risk documentation', 'accuracy'],
     active: [0, 1, 2],
     note: '→ AI Act Art. 9 — ongoing risk management required',
-    scores: { General: 0.72, Translation: 0.41, Code: 0.88 }
+    scores: { General: 0.72, Translation: 0.41, Code: 0.88, Admin: 0.65 } as ScoreMap,
   },
   {
     name: 'Data protection',
@@ -74,7 +79,7 @@ const profiles = [
     criteria: ['data minimisation', 'consent', 'purpose limitation', 'retention', 'anonymisation'],
     active: [0, 2, 4],
     note: '→ GDPR Art. 5 — lawfulness, fairness, transparency',
-    scores: { General: 0.55, Translation: 0.80, Code: 0.92 }
+    scores: { General: 0.55, Translation: 0.80, Code: 0.92, Admin: 0.38 } as ScoreMap,
   },
   {
     name: 'Security',
@@ -82,7 +87,7 @@ const profiles = [
     criteria: ['prompt injection', 'output validation', 'access control', 'audit log', 'sandboxing'],
     active: [0, 1, 3],
     note: '→ ANSSI — hardening & incident traceability',
-    scores: { General: 0.44, Translation: 0.20, Code: 0.95 }
+    scores: { General: 0.44, Translation: 0.20, Code: 0.95, Admin: 0.60 } as ScoreMap,
   },
   {
     name: 'Accessibility',
@@ -90,34 +95,41 @@ const profiles = [
     criteria: ['plain language', 'reading level', 'inclusivity', 'RGAA', 'alt text'],
     active: [0, 2, 3],
     note: '→ RGAA — accessibility for all public sector outputs',
-    scores: { General: 0.88, Translation: 0.76, Code: 0.30 }
-  }
+    scores: { General: 0.88, Translation: 0.76, Code: 0.30, Admin: 0.91 } as ScoreMap,
+  },
 ]
-
-const useCases = ['General', 'Translation', 'Code']
 
 const currentIdx = ref(0)
 const activeProfile = computed(() => profiles[currentIdx.value])
 
-const currentScores = reactive({ General: 0.72, Translation: 0.41, Code: 0.88 })
-const targetScores = reactive({ ...currentScores })
-const displayedScores = reactive({ ...currentScores })
-const histories: Record<string, number[]> = reactive({
-  General: [], Translation: [], Code: []
-})
-const canvases: Record<string, HTMLCanvasElement | null> = reactive({
-  General: null, Translation: null, Code: null
+const currentScores = ref<ScoreMap>({ General: 0.72, Translation: 0.41, Code: 0.88, Admin: 0.65 })
+const targetScores = ref<ScoreMap>({ ...currentScores.value })
+const displayedScores = ref<ScoreMap>({ ...currentScores.value })
+
+const histories = ref<Record<UseCase, number[]>>({
+  General: [], Translation: [], Code: [], Admin: [],
 })
 
-// Seed histories
-useCases.forEach(uc => {
-  const s = currentScores[uc as keyof typeof currentScores]
+const canvasRefs = ref<Record<UseCase, HTMLCanvasElement | null>>({
+  General: null, Translation: null, Code: null, Admin: null,
+})
+
+function setCanvasRef(uc: UseCase) {
+  return (el: unknown) => {
+    if (el instanceof HTMLCanvasElement) {
+      canvasRefs.value[uc] = el
+    }
+  }
+}
+
+USE_CASES.forEach(uc => {
+  const s = currentScores.value[uc]
   for (let i = 0; i < 20; i++) {
-    histories[uc].push(s + (Math.random() - 0.5) * 0.05)
+    histories.value[uc].push(s + (Math.random() - 0.5) * 0.05)
   }
 })
 
-function scoreColor(s: number) {
+function scoreColor(s: number): string {
   if (s >= 0.7) return '#3a8a50'
   if (s >= 0.4) return '#8a7a30'
   return '#8a3a3a'
@@ -128,21 +140,22 @@ function lerp(a: number, b: number, t: number) { return a + (b - a) * t }
 function setProfile(idx: number) {
   currentIdx.value = idx
   const p = profiles[idx]
-  useCases.forEach(uc => {
-    (targetScores as any)[uc] = p.scores[uc as keyof typeof p.scores]
+  USE_CASES.forEach(uc => {
+    targetScores.value[uc] = p.scores[uc]
   })
 }
 
-function drawSparkline(uc: string) {
-  const canvas = canvases[uc]
+function drawSparkline(uc: UseCase) {
+  const canvas = canvasRefs.value[uc]
   if (!canvas) return
   const W = canvas.offsetWidth || 90
   const H = 28
   if (canvas.width !== W) canvas.width = W
   canvas.height = H
-  const ctx = canvas.getContext('2d')!
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
   ctx.clearRect(0, 0, W, H)
-  const pts = histories[uc]
+  const pts = histories.value[uc]
   if (pts.length < 2) return
   const min = Math.min(...pts)
   const max = Math.max(...pts)
@@ -161,14 +174,13 @@ function drawSparkline(uc: string) {
 }
 
 function tick() {
-  useCases.forEach(uc => {
-    const k = uc as keyof typeof currentScores
-    currentScores[k] = lerp(currentScores[k], targetScores[k], 0.1)
+  USE_CASES.forEach(uc => {
+    currentScores.value[uc] = lerp(currentScores.value[uc], targetScores.value[uc], 0.1)
     const noise = (Math.random() - 0.5) * 0.03
-    const v = Math.min(1, Math.max(0, currentScores[k] + noise))
-    histories[uc].push(parseFloat(v.toFixed(3)))
-    if (histories[uc].length > 36) histories[uc].shift()
-    displayedScores[k] = v
+    const v = Math.min(1, Math.max(0, currentScores.value[uc] + noise))
+    histories.value[uc].push(parseFloat(v.toFixed(3)))
+    if (histories.value[uc].length > 36) histories.value[uc].shift()
+    displayedScores.value[uc] = v
     drawSparkline(uc)
   })
 }
@@ -199,6 +211,7 @@ onUnmounted(() => clearInterval(interval))
   border: 1.5px solid rgba(232,234,240,.12);
   background: transparent;
   color: rgba(232,234,240,.35);
+  cursor: pointer;
   letter-spacing: 0.05em;
   transition: all 0.2s;
 }
