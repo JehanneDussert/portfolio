@@ -3,6 +3,11 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
+  // @ts-ignore
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+  },
   plugins: [vue()],
   resolve: {
     alias: {
@@ -24,8 +29,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           vue: ['vue', 'vue-router', 'pinia'],
-        },
       },
     },
   },
+}
 })
