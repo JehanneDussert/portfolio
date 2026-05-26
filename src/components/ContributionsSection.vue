@@ -46,6 +46,15 @@ function toggle(title: string) {
 
 const contributions = [
   {
+    year: '2026', org: 'arXiv',
+    title: 'Who judges the judges? Governance from metrics: a runtime framework for continuous LLM compliance monitoring',
+    sub: 'Independent researcher · arXiv:2605.24737',
+    intro: 'Proposes a runtime framework for continuous LLM compliance monitoring — arguing that governance cannot rely on point-in-time evaluations alone, and that production observability is a prerequisite for meaningful accountability in regulated deployments.',
+    args: [],
+    themes: ['LLM governance', 'Compliance monitoring', 'AI Act', 'Runtime observability'],
+    url: 'https://arxiv.org/abs/2605.24737',
+  },
+  {
     year: '2026', org: 'United Nations',
     title: 'UN Global Dialogue on AI Governance — Written Submission',
     sub: 'Technical Community Stakeholder · Geneva, July 6–7 2026',

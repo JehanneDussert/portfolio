@@ -22,12 +22,20 @@
           <li>Governance-driven model routing — each use case resolves to a model via its configured profile</li>
           <li>Local SLMs via Ollama — data sovereignty by design</li>
         </ul>
-        <a :href="project.githubUrl" target="_blank" rel="noopener" class="gh-link" data-hover>
-          View on GitHub
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="links">
+          <a :href="project.githubUrl" target="_blank" rel="noopener" class="gh-link" data-hover>
+            View on GitHub
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://arxiv.org/abs/2605.24737" target="_blank" rel="noopener" class="arxiv-link" data-hover>
+            Research paper — arXiv:2605.24737
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div class="top-right">
@@ -160,6 +168,19 @@ const { project } = usePortfolioData()
   transition: color .18s, border-color .18s;
 }
 .gh-link:hover { color: var(--teal-2); border-color: rgba(0,184,158,.4); }
+.links { display: flex; align-items: center; gap: 20px; }
+.arxiv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal);
+  border-bottom: 1px solid rgba(0,212,184,.25);
+  padding-bottom: 2px;
+  transition: color .18s, border-color .18s;
+}
+.arxiv-link:hover { color: var(--teal-2); border-color: rgba(0,184,158,.4); }
 
 /* ── TOP RIGHT ── */
 .top-right {
