@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="about" class="hero">
     <!-- Desktop: photo left -->
     <div class="hero-photo reveal reveal-delay-1">
       <div class="photo-wrap">

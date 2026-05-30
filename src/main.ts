@@ -8,6 +8,8 @@ export const createApp = ViteSSG(
   {
     routes: [
       { path: '/', name: 'home', component: () => import('@/views/HomeView.vue') },
+      { path: '/writing', name: 'writing', component: () => import('@/views/WritingView.vue') },
+      { path: '/writing/:slug', name: 'article', component: () => import('@/views/ArticleView.vue') },
       { path: '/:pathMatch(.*)*', redirect: '/' },
     ],
     scrollBehavior(to, _from, savedPosition) {

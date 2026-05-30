@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="s">
     <div class="s-head reveal">
-      <span class="idx">06</span>
+      <span class="idx">07</span>
       <h2 class="section-title">Contact</h2>
     </div>
     <div class="content reveal reveal-delay-1">
