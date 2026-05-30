@@ -5,7 +5,7 @@
     <!-- Desktop links -->
     <div class="links desktop">
       <a class="link" @click.prevent="goHome" data-hover>About</a>
-      <RouterLink to="/writing" class="link" :class="{ active: isWriting }">Research</RouterLink>
+      <RouterLink to="/writing" class="link" :class="{ active: isWriting }">Writing</RouterLink>
       <a href="https://github.com/JehanneDussert/govllm" target="_blank" rel="noopener" class="link ext">
         govllm <span class="ext-icon">↗</span>
       </a>
@@ -24,7 +24,7 @@
       <div v-if="open" class="mobile-overlay" @click="open = false">
         <div class="mobile-menu" @click.stop>
           <a class="mob-link" @click.prevent="goHome">About</a>
-          <RouterLink to="/writing" @click="open = false" class="mob-link" :class="{ active: isWriting }">Research</RouterLink>
+          <RouterLink to="/writing" @click="open = false" class="mob-link" :class="{ active: isWriting }">Writing</RouterLink>
           <a href="https://github.com/JehanneDussert/govllm" target="_blank" rel="noopener" @click="open = false" class="mob-link">
             govllm ↗
           </a>

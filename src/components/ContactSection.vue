@@ -46,6 +46,16 @@
           </div>
           <span class="link-arrow">→</span>
         </a>
+        <a href="mailto:research.jehannedussert@gmail.com" class="link-card" data-hover>
+          <div class="link-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <p class="link-title">Send an email</p>
+            <p class="link-sub">research.jehannedussert@gmail.com</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
       </div>
     </div>
   </section>
