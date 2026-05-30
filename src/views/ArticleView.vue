@@ -126,6 +126,9 @@ async function copyLink() {
 onMounted(async () => {
   await fetchArticle(slug)
   if (article.value) {
+    document.title = `${article.value.title} — Jehanne Dussert`
+    const meta = document.querySelector('meta[name="description"]')
+    if (meta && article.value.excerpt) meta.setAttribute('content', article.value.excerpt)
     const r = useReactions(article.value.id)
     reactionsComposable.value = r
     r.fetchReactions()
