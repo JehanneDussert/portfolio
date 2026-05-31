@@ -66,6 +66,10 @@ body.cursor-hover #cursor::after  { background: var(--amber); width: 2px; }
 .reveal-delay-3 { transition-delay: .24s; }
 .reveal-delay-4 { transition-delay: .32s; }
 
+@media (max-width: 768px) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-2); }
 ::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 2px; }
