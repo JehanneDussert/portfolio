@@ -195,6 +195,7 @@ onUnmounted(() => {
 .art-body {
   font-size: 15px; color: var(--txt-2); line-height: 1.85;
   border-top: 1px solid var(--b); padding-top: 1.25rem; margin-bottom: 3rem;
+  overflow-wrap: break-word; word-break: break-word;
 }
 .art-body :deep(h2) {
   font-size: 1.2rem; font-weight: 600; color: var(--txt); margin: 2rem 0 .75rem;
@@ -214,6 +215,11 @@ onUnmounted(() => {
   font-family: var(--ff-mono); font-size: .88em; background: var(--bg-3);
   border: 1px solid var(--b); padding: 1px 5px; border-radius: var(--r-sm); color: var(--teal);
 }
+.art-body :deep(pre) {
+  background: var(--bg-3); border: 1px solid var(--b); border-radius: var(--r-sm);
+  padding: 1rem; margin-bottom: 1.25rem; overflow-x: auto;
+}
+.art-body :deep(pre code) { background: none; border: none; padding: 0; font-size: .85em; }
 .art-body :deep(blockquote) {
   border-left: 2px solid var(--teal); padding-left: 1.25rem;
   margin: 1.5rem 0; color: var(--txt-2); font-style: italic;
@@ -221,6 +227,9 @@ onUnmounted(() => {
 .art-body :deep(a) { color: var(--teal); border-bottom: 1px solid rgba(0,212,184,.3); }
 .art-body :deep(a:hover) { border-color: var(--teal); }
 .art-body :deep(hr) { border: none; border-top: 1px solid var(--b); margin: 2.5rem 0; }
+.art-body :deep(img) { max-width: 100%; height: auto; border-radius: var(--r-sm); }
+.art-body :deep(table) { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
+.art-body :deep(td), .art-body :deep(th) { padding: .5rem .75rem; border: 1px solid var(--b); font-size: 13px; }
 
 /* Footer / actions */
 .art-footer {
@@ -258,8 +267,17 @@ onUnmounted(() => {
 .pdf-btn:hover { color: var(--amber); border-color: rgba(240,165,0,.35); }
 
 @media (max-width: 768px) {
-  .article-page { padding: 1rem 1.25rem 5rem; }
+  .article-page { padding: 1rem 1rem 5rem; }
+  .art-topbar { flex-wrap: wrap; gap: .4rem; }
+  .art-meta { font-size: 10px; }
+  .art-title { font-size: 1.35rem; line-height: 1.3; }
+  .art-body { font-size: 14.5px; line-height: 1.8; }
+  .art-body :deep(h2) { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+  .art-body :deep(blockquote) { padding-left: 1rem; margin: 1rem 0; }
+  .art-body :deep(ul), .art-body :deep(ol) { padding-left: 1.1rem; }
   .art-footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .share { margin-left: 0; }
+  .reactions { flex-wrap: wrap; }
+  .share { margin-left: 0; flex-wrap: wrap; }
+  .react-btn { padding: 7px 11px; font-size: 12px; }
 }
 </style>
