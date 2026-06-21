@@ -3,7 +3,19 @@ import type { Experience, Project } from '@/types'
 export function usePortfolioData() {
   const experiences: Experience[] = [
     {
-      period: '2024 – Present',
+      period: '2026 – Present',
+      org: 'AXA Group Operations',
+      role: 'AI Governance Lead',
+      bullets: [
+        'Building the Group\'s technical AI governance framework, with a focus on agentic AI — turning governance rules into computational, enforceable controls (policy-as-code) across MLOps, LLMOps and AgentOps.',
+        'Applying a risk-based approach to the highest-stakes use cases, with Risk and Compliance — covering evaluation, bias and trustworthiness across the full AI lifecycle.',
+        'Supporting and controlling entities throughout implementation, then monitoring production to make the framework evolve.',
+        'Product Owner of the Group AI governance tool: vision, backlog, multi-entity rollout.',
+      ],
+      impact: 'Designing the Group\'s computational AI governance infrastructure across 15+ countries — turning policy into enforceable code across agentic AI deployments.',
+    },
+    {
+      period: '2024 – 2026',
       org: 'French Tax Administration (DGFiP)',
       role: 'Tech Lead – Generative AI & AI Governance Coordinator',
       bullets: [
@@ -52,7 +64,7 @@ export function usePortfolioData() {
     {
       period: '2022 – 2023',
       org: 'Interministerial Digital Directorate (DINUM) & Ministry of Interior',
-      role: 'Government Innovation Fellow  – Unreal Engine C++ Developer',
+      role: 'Government Innovation Fellow — Unreal Engine C++ Developer',
       bullets: [
         'Developed synthetic data generator in high-security institutional context.',
         'Led cross-functional team (2 developers, 1 designer).',

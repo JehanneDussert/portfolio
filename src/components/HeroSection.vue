@@ -10,7 +10,7 @@
     <div class="hero-content">
       <div class="eyebrow reveal">
         <span class="ew-line"></span>
-        <span class="ew-text">GenAI Tech Lead · Paris (open to relocation) · French Tax Administration (DGFiP)</span>
+        <span class="ew-text">AI Governance Lead · AXA Group Operations · Paris</span>
       </div>
 
       <!-- Mobile: title + photo side by side -->
@@ -27,8 +27,7 @@
       </div>
 
       <p class="desc reveal reveal-delay-2">
-        Deploying and monitoring LLM-based systems at national scale (95K users),
-        at the intersection of software engineering, observability, and institutional governance.
+        Building AXA's Group-level technical AI governance framework across 15+ countries and hundreds of entities — making governance computational and enforceable as code, with a focus on agentic AI. At the intersection of software engineering, observability, and institutional governance.
       </p>
       <div class="dual reveal reveal-delay-3">
         <div class="dual-pill tech">
@@ -59,9 +58,8 @@
 
 <script setup lang="ts">
 const stats = [
-  { num: '95K', label: 'public sector users' },
+  { num: '15+', label: 'countries covered' },
   { num: '50+', label: 'use cases evaluated' },
-  { num: '40+', label: 'contributors coordinated' },
   { num: '3', label: 'EU mandates' },
 ]
 </script>
