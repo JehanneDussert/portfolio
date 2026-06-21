@@ -7,7 +7,7 @@
     <div class="content reveal reveal-delay-1">
       <div class="left">
         <h3 class="contact-title">Let's work<br /><span class="acc">together</span></h3>
-        <p class="contact-desc">Available for projects at the intersection of AI engineering and governance — a position, a mission, an advisory role, or a collaboration.</p>
+        <p class="contact-desc">Open to conversations at the intersection of AI governance and engineering — talks, advisory mandates, research collaborations, and open-source.</p>
         <div class="avail">
           <p class="avail-label">Open to</p>
           <div class="avail-tags">
@@ -16,17 +16,7 @@
         </div>
       </div>
       <div class="links">
-        <a href="https://calendly.com/jehanne-dussert/30min" target="_blank" rel="noopener" class="link-card primary" data-hover>
-          <div class="link-icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M6 1v4M12 1v4M2 7h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </div>
-          <div>
-            <p class="link-title">Book a 30-min call</p>
-            <p class="link-sub">calendly.com/jehanne-dussert</p>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://www.linkedin.com/in/jehanne-dussert" target="_blank" rel="noopener" class="link-card" data-hover>
+        <a href="https://www.linkedin.com/in/jehanne-dussert" target="_blank" rel="noopener" class="link-card primary" data-hover>
           <div class="link-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M5 7v6M5 4.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 13v-3.5A1.5 1.5 0 0 1 11.5 8v0A1.5 1.5 0 0 1 13 9.5V13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
           </div>
@@ -63,10 +53,10 @@
 
 <script setup lang="ts">
 const availability = [
-  'Roles combining engineering & AI governance',
-  'Freelance missions & advisory',
   'Talks & conference appearances',
+  'Advisory mandates & expert roles',
   'Research & open-source collaboration',
+  'Governance consulting',
 ]
 </script>
 
