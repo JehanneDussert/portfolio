@@ -158,7 +158,7 @@ export const govllm: ProjectSheet = {
 
 export const govllmVideo = {
   youtubeId: 'VBzLZySLnWU',
-  start: 482,
+  start: 0,
   poster: '/media/govllm-parlez-moi-dia-poster.jpg',
   label: "Excerpt from Parlez-moi d'IA n°106, in French, subtitled",
 }
