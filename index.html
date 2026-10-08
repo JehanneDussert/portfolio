@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // First visit to a French page with no stored choice and a non-French browser:
+      // offer English. Client-side only, never for bots. Slugs mirror src/data/site.ts.
+      (function () {
+        var map = { '/': '/en', '/underlaid': '/en/underlaid', '/govllm': '/en/govllm', '/parcours': '/en/path', '/interventions': '/en/talks', '/engagements': '/en/commitments' }
+        var p = location.pathname.replace(/\/+$/, '') || '/'
+        if (!(p in map)) return
+        if (/bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit|embed|whatsapp|telegram|discord|linkedin/i.test(navigator.userAgent)) return
+        var stored = null
+        try { stored = localStorage.getItem('lang') } catch (e) {}
+        var lang = (navigator.language || '').toLowerCase()
+        if (stored === 'en' || (!stored && lang && lang.indexOf('fr') !== 0)) location.replace(map[p] + location.search + location.hash)
+      })()
+    </script>
     <script>
       // Set the theme before first paint: stored choice, else the OS preference, else dark.
       (function () {

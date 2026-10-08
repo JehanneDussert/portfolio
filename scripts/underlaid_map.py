@@ -2,7 +2,8 @@
 
 Reads the published map data of https://github.com/JehanneDussert/underlaid
 at run time (nothing is copied into this repository) and writes
-public/img/underlaid-map-{light,dark}.{webp,png}, 1600 px wide.
+public/img/underlaid-map-{light,dark}.{webp,png}, 1600 px wide,
+plus an 800 px webp of each for phones.
 
     python -m venv .venv
     .venv/Scripts/pip install -r scripts/requirements.txt   # Windows
@@ -118,6 +119,9 @@ def render(iris, layers, theme):
     OUT.mkdir(parents=True, exist_ok=True)
     img.save(OUT / f"underlaid-map-{theme}.png", optimize=True)
     img.save(OUT / f"underlaid-map-{theme}.webp", quality=78, method=6)
+    # Half-size copy for phones (srcset)
+    small = img.resize((WIDTH_PX // 2, round(img.height / 2)), Image.LANCZOS)
+    small.save(OUT / f"underlaid-map-{theme}-800.webp", quality=78, method=6)
     print(f"underlaid-map-{theme}: {img.width}×{img.height}")
 
 

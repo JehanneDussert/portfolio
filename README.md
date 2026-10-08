@@ -48,7 +48,7 @@ python -m venv .venv
 .venv/Scripts/python scripts/underlaid_map.py            # macOS / Linux: .venv/bin/python
 ```
 
-It writes `public/img/underlaid-map-{light,dark}.{webp,png}` (1600 px wide). Commit the result.
+It writes `public/img/underlaid-map-{light,dark}.{webp,png}` (1600 px wide) and an 800 px webp of each for phones. Commit the result.
 
 If the download fails with `CERTIFICATE_VERIFY_FAILED` (an antivirus intercepting HTTPS),
 install `truststore` in the venv and run
