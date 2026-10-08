@@ -1,108 +1,59 @@
-# Portfolio — Jehanne Dussert
+# jehannedussert.com
 
-Stack : **Vue 3 + TypeScript + Vite** (frontend) · **FastAPI + Python** (backend)
-
----
-
-## Démarrage rapide
-
-### Backend
+Vue 3 + Vite, prerendered with [vite-ssg](https://github.com/antfu-collective/vite-ssg), deployed on Vercel.
 
 ```bash
-cd backend
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-```
-
-API disponible sur `http://localhost:8000`  
-Docs interactives : `http://localhost:8000/docs`
-
-### Frontend
-
-```bash
-cd frontend
 npm install
-npm run dev
+npm run dev      # http://localhost:5173
+npm run build    # type-check + prerender the 6 routes into dist/
 ```
-
-App disponible sur `http://localhost:5173`
-
-Le proxy Vite redirige `/api/*` → `http://localhost:8000` automatiquement.
-
----
 
 ## Structure
 
 ```
-portfolio/
-├── backend/
-│   ├── main.py               # FastAPI app + CORS
-│   ├── requirements.txt
-│   ├── models/__init__.py    # Pydantic models
-│   └── routers/
-│       ├── contact.py        # POST /api/contact
-│       └── analytics.py      # POST /api/analytics/track · GET /api/analytics
-└── frontend/
-    ├── index.html
-    ├── vite.config.ts        # proxy /api → :8000
-    └── src/
-        ├── main.ts
-        ├── App.vue
-        ├── router/
-        ├── types/            # interfaces TypeScript
-        ├── assets/css/       # design tokens
-        ├── composables/
-        │   ├── useApi.ts           # contact + analytics
-        │   └── usePortfolioData.ts # données CV
-        ├── components/
-        │   ├── AppNav.vue
-        │   ├── AppFooter.vue
-        │   ├── HeroSection.vue
-        │   ├── PositioningSection.vue
-        │   ├── ExperienceSection.vue
-        │   ├── ProjectSection.vue
-        │   └── SkillsSection.vue
-        └── views/
-            ├── HomeView.vue
-            └── ContactView.vue
+src/
+├── data/site.ts              # all copy, links and section colours
+├── App.vue                   # the shell: menu ⇄ sidebar, panel, head tags
+├── composables/
+│   ├── useShell.ts           # home ⇄ section choreography (timers, fast clicks)
+│   └── useTheme.ts           # dark / light toggle
+├── components/
+│   ├── SectionContent.vue    # picks the content of the open section
+│   ├── ProjectSheet.vue      # Underlaid and GovLLM sheets ("figures first")
+│   ├── SheetHead.vue         # colour rule, tag, title
+│   ├── ListRows.vue          # Path and Talks & writing rows
+│   ├── CountUp.vue           # 0 → 17 counter
+│   ├── UnderlaidMap.vue      # light and dark maps, cross-faded
+│   └── VideoEmbed.vue        # click-to-load YouTube player
+└── assets/css/main.css       # tokens, font, keyframes
+public/
+├── fonts/                    # Plus Jakarta Sans (variable, OFL), self-hosted
+├── img/underlaid-map-*       # generated, see below
+└── media/                    # GovLLM video poster
 ```
 
----
+Routes: `/`, `/underlaid`, `/govllm`, `/path`, `/talks`, `/commitments`. They all render the same shell;
+the route only says which section is open. Each one is prerendered to `dist/<route>/index.html`,
+which Vercel serves before the SPA rewrite in `vercel.json`.
 
-## Configuration
+## Underlaid map
 
-### Email (contact form)
-
-Dans `backend/routers/contact.py`, décommenter et configurer le bloc SMTP :
-
-```python
-import smtplib
-from email.message import EmailMessage
-# ...
-```
-
-Ou utiliser un service comme [Resend](https://resend.com) / [FastMail](https://fastmail.com).
-
-### Analytics
-
-L'implémentation actuelle utilise un store en mémoire (remis à zéro au redémarrage).  
-Pour la persistance : remplacer `_views` par Redis ou une base de données dans `backend/routers/analytics.py`.
-
-### CORS en production
-
-Mettre à jour `allow_origins` dans `backend/main.py` avec votre domaine de production.
-
----
-
-## Build production
+The two maps on `/underlaid` are drawn from the published Underlaid data
+([JehanneDussert/underlaid](https://github.com/JehanneDussert/underlaid), `frontend/public/data/`),
+downloaded at run time — nothing from that repository is stored here.
 
 ```bash
-# Frontend
-cd frontend && npm run build   # → dist/
-
-# Backend
-uvicorn main:app --host 0.0.0.0 --port 8000
+python -m venv .venv
+.venv/Scripts/pip install -r scripts/requirements.txt    # macOS / Linux: .venv/bin/pip
+.venv/Scripts/python scripts/underlaid_map.py            # macOS / Linux: .venv/bin/python
 ```
 
-Servir le dossier `frontend/dist/` via nginx ou en ajoutant `StaticFiles` à FastAPI.
+It writes `public/img/underlaid-map-{light,dark}.{webp,png}` (1600 px wide). Commit the result.
+
+If the download fails with `CERTIFICATE_VERIFY_FAILED` (an antivirus intercepting HTTPS),
+install `truststore` in the venv and run
+`python -c "import truststore; truststore.inject_into_ssl(); import runpy; runpy.run_path('scripts/underlaid_map.py', run_name='__main__')"`.
+
+## Analytics
+
+Vercel Web Analytics (only on the deployed domain) and Microsoft Clarity (loaded once the page is idle).
