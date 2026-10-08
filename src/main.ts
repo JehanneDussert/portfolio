@@ -17,6 +17,10 @@ const routes: RouteRecordRaw[] = [
       meta: { lang, key: s.key },
     })),
   ]),
+  // English slugs served at the root before the site became bilingual
+  { path: '/path', redirect: '/en/path' },
+  { path: '/talks', redirect: '/en/talks' },
+  { path: '/commitments', redirect: '/en/commitments' },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
