@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jehannedussert.com/</loc><lastmod>2026-10-07</lastmod><priority>1.0</priority></url>
-  <url><loc>https://jehannedussert.com/underlaid</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jehannedussert.com/govllm</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jehannedussert.com/path</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jehannedussert.com/talks</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jehannedussert.com/commitments</loc><lastmod>2026-10-07</lastmod><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jehannedussert.com/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/underlaid</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/underlaid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/underlaid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/underlaid"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en/underlaid</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/underlaid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/underlaid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/underlaid"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/govllm</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/govllm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/govllm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/govllm"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en/govllm</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/govllm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/govllm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/govllm"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/parcours</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/parcours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/path"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/parcours"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en/path</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/parcours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/path"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/parcours"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/interventions</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/interventions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/talks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/interventions"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en/talks</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/interventions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/talks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/interventions"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/engagements</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/engagements"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/commitments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/engagements"/>
+  </url>
+  <url>
+    <loc>https://jehannedussert.com/en/commitments</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jehannedussert.com/engagements"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jehannedussert.com/en/commitments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jehannedussert.com/engagements"/>
+  </url>
 </urlset>

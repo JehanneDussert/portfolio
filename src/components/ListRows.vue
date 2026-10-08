@@ -9,7 +9,7 @@
       >
         <span class="main">
           <span class="title">
-            {{ item.title }}<template v-if="item.href">&nbsp;<span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></template>
+            {{ item.title }}<template v-if="item.href">&nbsp;<span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> {{ t.ui.newTab }}</span></template>
           </span>
           <span class="sub">{{ item.subtitle }}</span>
         </span>
@@ -20,9 +20,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ListItem } from '@/data/site'
+import type { ListItem } from '@/content/types'
+import { usePage } from '@/composables/useContent'
 
 defineProps<{ items: ListItem[] }>()
+const { t } = usePage()
 </script>
 
 <style scoped>

@@ -4,7 +4,7 @@
 
     <p v-if="sheet.figure" class="figure">
       <span class="num"><CountUp :value="sheet.figure.value" :run="run" /><span class="unit">&nbsp;{{ sheet.figure.unit }}</span></span>
-      <span v-if="sheet.figure.vs" class="vs">vs {{ sheet.figure.vs }}</span>
+      <span v-if="sheet.figure.vs" class="vs">{{ sheet.figure.vs }}</span>
     </p>
     <p v-else-if="sheet.headline" class="figure text">
       <span class="num">{{ sheet.headline }}</span>
@@ -16,11 +16,11 @@
       <div class="media"><slot name="media" /></div>
       <div class="stack">
         <section class="block">
-          <h3>Problem</h3>
+          <h3>{{ t.ui.problem }}</h3>
           <p>{{ sheet.problem }}</p>
         </section>
         <section class="block">
-          <h3>Approach</h3>
+          <h3>{{ t.ui.approach }}</h3>
           <p>{{ sheet.approach }}</p>
         </section>
       </div>
@@ -28,18 +28,18 @@
     <template v-else>
       <div class="pa cols">
         <section class="block">
-          <h3>Problem</h3>
+          <h3>{{ t.ui.problem }}</h3>
           <p>{{ sheet.problem }}</p>
         </section>
         <section class="block">
-          <h3>Approach</h3>
+          <h3>{{ t.ui.approach }}</h3>
           <p>{{ sheet.approach }}</p>
         </section>
       </div>
       <div class="media wide"><slot name="media" /></div>
     </template>
 
-    <h3 class="sr-only">Also</h3>
+    <h3 class="sr-only">{{ t.ui.also }}</h3>
     <ul class="also">
       <li v-for="row in sheet.also" :key="row.key">
         <span class="key">{{ row.key }}</span>
@@ -50,7 +50,7 @@
     <ul class="buttons">
       <li v-for="b in sheet.buttons" :key="b.href">
         <a :href="b.href" target="_blank" rel="noopener" class="btn" :class="{ primary: b.primary }">
-          {{ b.label }} <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+          {{ b.label }} <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> {{ t.ui.newTab }}</span>
         </a>
       </li>
     </ul>
@@ -58,11 +58,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectSheet } from '@/data/site'
+import type { ProjectSheet } from '@/content/types'
+import { usePage } from '@/composables/useContent'
 import SheetHead from './SheetHead.vue'
 import CountUp from './CountUp.vue'
 
 defineProps<{ sheet: ProjectSheet; layout: 'media-left' | 'media-below'; run: boolean }>()
+const { t } = usePage()
 </script>
 
 <style scoped>

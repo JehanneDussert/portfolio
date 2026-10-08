@@ -2,14 +2,25 @@ import { ViteSSG } from 'vite-ssg'
 import type { RouteRecordRaw } from 'vue-router'
 import App from './App.vue'
 import Empty from './components/Empty.vue'
-import { sections } from '@/data/site'
+import { LANGS, pathFor, sections } from '@/data/site'
 import '@/assets/css/main.css'
 
 // Every route renders the same shell (App.vue); the route only says which
-// section is open, so the menu is never remounted and can animate.
+// language and which section are open, so the menu is never remounted and can animate.
 const routes: RouteRecordRaw[] = [
-  { path: '/', name: 'home', component: Empty },
-  ...sections.map((s) => ({ path: `/${s.key}`, name: s.key, component: Empty })),
+  ...LANGS.flatMap((lang) => [
+    { path: pathFor(lang, null), name: `${lang}:home`, component: Empty, meta: { lang, key: null } },
+    ...sections.map((s) => ({
+      path: pathFor(lang, s.key),
+      name: `${lang}:${s.key}`,
+      component: Empty,
+      meta: { lang, key: s.key },
+    })),
+  ]),
+  // English slugs served at the root before the site became bilingual
+  { path: '/path', redirect: '/en/path' },
+  { path: '/talks', redirect: '/en/talks' },
+  { path: '/commitments', redirect: '/en/commitments' },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 

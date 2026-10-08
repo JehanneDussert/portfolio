@@ -1,9 +1,18 @@
 <template>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">{{ t.ui.skip }}</a>
   <div class="wrap">
     <header class="top">
-      <button type="button" class="theme" @click="toggle">
-        <span class="sr-only">Switch to </span><span class="to-light">Light</span><span class="to-dark">Dark</span><span class="sr-only"> theme</span>
+      <RouterLink
+        :to="pathFor(other, key)"
+        class="pill"
+        :lang="other"
+        :hreflang="other"
+        @click="rememberLang(other)"
+      >
+        {{ t.ui.switchLang.label }}<span class="sr-only"> — {{ t.ui.switchLang.name }}</span>
+      </RouterLink>
+      <button type="button" class="pill" @click="toggle">
+        <span class="sr-only">{{ t.ui.themeBefore }}</span><span class="to-light">{{ t.ui.light }}</span><span class="to-dark">{{ t.ui.dark }}</span><span class="sr-only">{{ t.ui.themeAfter }}</span>
       </button>
     </header>
 
@@ -15,33 +24,33 @@
     >
       <aside class="side">
         <div class="ident">
-          <h1 class="name"><RouterLink to="/">{{ person.name }}</RouterLink></h1>
+          <h1 class="name"><RouterLink :to="pathFor(lang, null)">{{ t.person.name }}</RouterLink></h1>
           <div class="intro" :aria-hidden="mode === 'section'">
-            <div class="intro-in"><p>{{ person.intro }}</p></div>
+            <div class="intro-in"><p>{{ t.person.intro }}</p></div>
           </div>
         </div>
 
-        <nav aria-label="Main">
+        <nav :aria-label="t.ui.nav">
           <ul class="menu">
             <li v-for="(s, i) in sections" :key="s.key">
               <RouterLink
-                :to="`/${s.key}`"
+                :to="pathFor(lang, s.key)"
                 class="entry"
-                :class="{ active: current === s.key }"
-                :aria-current="current === s.key ? 'page' : undefined"
+                :class="{ active: key === s.key }"
+                :aria-current="key === s.key ? 'page' : undefined"
                 :style="{ '--c': s.color, '--c-ink': s.ink, '--i': i }"
                 @click="onEntry($event, s.key)"
               >
                 <span class="dot" aria-hidden="true" />
-                <span class="label">{{ s.label }}</span>
-                <span class="short">{{ s.short }}</span>
+                <span class="label">{{ t.sections[s.key].label }}</span>
+                <span class="short">{{ t.sections[s.key].short }}</span>
               </RouterLink>
             </li>
           </ul>
         </nav>
 
         <ul class="links">
-          <li v-for="l in person.links" :key="l.label">
+          <li v-for="l in t.person.links" :key="l.label">
             <a :href="l.href" v-bind="l.href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}">{{ l.label }}</a>
           </li>
         </ul>
@@ -57,50 +66,69 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { computed, nextTick, onMounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { home, person, SITE_URL, sectionByKey, sections, type SectionKey } from '@/data/site'
+import { LANGS, pathFor, SITE_URL, sectionByKey, sections, type Lang, type SectionKey } from '@/data/site'
+import { content, usePage } from '@/composables/useContent'
 import { useShell } from '@/composables/useShell'
 import { useTheme } from '@/composables/useTheme'
 import SectionContent from '@/components/SectionContent.vue'
 
-const route = useRoute()
 const router = useRouter()
+const { lang, key, t } = usePage()
+const other = computed<Lang>(() => (lang.value === 'fr' ? 'en' : 'fr'))
 
-const keyOf = (name: unknown): SectionKey | null =>
-  typeof name === 'string' && name in sectionByKey ? (name as SectionKey) : null
-
-const current = computed(() => keyOf(route.name))
-const { mode, shown, visible, navigated, leavingHome, go } = useShell(current.value)
+const { mode, shown, visible, navigated, leavingHome, go } = useShell(key.value)
 const { toggle } = useTheme()
 
-// Arrival animation only when the page is first loaded on "/".
-const initialHome = current.value === null
+// Arrival animation only when the page is first loaded on a home page.
+const initialHome = key.value === null
 const arrive = computed(() => initialHome && !navigated.value)
 
-watch(current, (key) => go(key))
+// Switching language keeps the same section: go() sees no change and only the text swaps.
+watch(key, (k) => {
+  go(k)
+  centreActive()
+})
+
+// Phone: the menu is a horizontal row; keep the open entry in view.
+function centreActive() {
+  nextTick(() => {
+    const row = document.querySelector<HTMLElement>('.side')
+    const el = row?.querySelector<HTMLElement>('.entry.active')
+    if (!row || !el || row.scrollWidth <= row.clientWidth) return
+    row.scrollLeft = el.offsetLeft - (row.clientWidth - el.offsetWidth) / 2
+  })
+}
+onMounted(centreActive)
+watch(lang, () => (navigated.value = true))
 
 const panelStyle = computed(() => {
   const s = shown.value ? sectionByKey[shown.value] : null
   return s ? { '--c': s.color, '--c-ink': s.ink } : {}
 })
 
-function onEntry(e: MouseEvent, key: SectionKey) {
+function onEntry(e: MouseEvent, k: SectionKey) {
   // Clicking the open entry again goes back home.
-  if (current.value === key && !e.metaKey && !e.ctrlKey) {
+  if (key.value === k && !e.metaKey && !e.ctrlKey) {
     e.preventDefault()
-    router.push('/')
+    router.push(pathFor(lang.value, null))
   }
 }
 
+function rememberLang(l: Lang) {
+  try { localStorage.setItem('lang', l) } catch { /* private mode */ }
+}
+
 // ── Head ────────────────────────────────────────────────────────
+const url = (l: Lang) => SITE_URL + pathFor(l, key.value)
+
 const meta = computed(() => {
-  const s = current.value ? sectionByKey[current.value] : null
+  const s = key.value ? t.value.sections[key.value] : null
   return {
-    title: s ? s.title : home.title,
-    description: s ? s.description : home.description,
-    url: s ? `${SITE_URL}/${s.key}` : `${SITE_URL}/`,
+    title: s ? s.title : t.value.home.title,
+    description: s ? s.description : t.value.home.description,
   }
 })
 
@@ -108,7 +136,6 @@ const personLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Jehanne Dussert',
-  url: `${SITE_URL}/`,
   jobTitle: 'AI Governance Lead',
   worksFor: { '@type': 'Organization', name: 'AXA Group Operations' },
   sameAs: ['https://www.linkedin.com/in/jehanne-dussert', 'https://github.com/JehanneDussert'],
@@ -119,14 +146,15 @@ const personLd = {
 }
 
 useHead({
-  htmlAttrs: { lang: 'en' },
+  htmlAttrs: { lang: () => lang.value },
   title: () => meta.value.title,
   meta: [
     { name: 'description', content: () => meta.value.description },
     { property: 'og:type', content: 'website' },
     { property: 'og:site_name', content: 'Jehanne Dussert' },
-    { property: 'og:locale', content: 'en_GB' },
-    { property: 'og:url', content: () => meta.value.url },
+    { property: 'og:locale', content: () => t.value.ogLocale },
+    { property: 'og:locale:alternate', content: () => content[other.value].ogLocale },
+    { property: 'og:url', content: () => url(lang.value) },
     { property: 'og:title', content: () => meta.value.title },
     { property: 'og:description', content: () => meta.value.description },
     { property: 'og:image', content: `${SITE_URL}/og-image.png` },
@@ -137,10 +165,14 @@ useHead({
     { name: 'twitter:description', content: () => meta.value.description },
     { name: 'twitter:image', content: `${SITE_URL}/og-image.png` },
   ],
-  link: [{ rel: 'canonical', href: () => meta.value.url }],
+  link: () => [
+    { rel: 'canonical', href: url(lang.value) },
+    ...LANGS.map((l) => ({ rel: 'alternate', hreflang: l, href: url(l), key: `alt-${l}` })),
+    { rel: 'alternate', hreflang: 'x-default', href: url('fr'), key: 'alt-x' },
+  ],
   script: () =>
-    current.value === null
-      ? [{ type: 'application/ld+json', key: 'person', innerHTML: JSON.stringify(personLd) }]
+    key.value === null
+      ? [{ type: 'application/ld+json', key: 'person', innerHTML: JSON.stringify({ ...personLd, url: url(lang.value) }) }]
       : [],
 })
 </script>
@@ -166,14 +198,19 @@ useHead({
   padding: 48px;
 }
 
-/* ── Theme button ─────────────────────────────────────────────── */
+/* ── Language and theme buttons ─────────────────────────────────────────────── */
 .top {
   position: absolute;
   top: 40px;
   right: 48px;
   z-index: 20;
+  display: flex;
+  gap: 8px;
 }
-.theme {
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
   min-width: 44px;
   padding: 10px 18px;
@@ -184,7 +221,7 @@ useHead({
   color: var(--mute);
   transition: color .3s, border-color .3s;
 }
-.theme:hover { color: var(--fg); border-color: var(--dim); }
+.pill:hover { color: var(--fg); border-color: var(--dim); }
 .to-dark { display: none; }
 :root[data-theme='light'] .to-dark { display: inline; }
 :root[data-theme='light'] .to-light { display: none; }
@@ -353,7 +390,7 @@ useHead({
 /* ── Phone ────────────────────────────────────────────────────── */
 @media (max-width: 899px) {
   .wrap { padding: 24px 20px 64px; }
-  .top { position: static; display: flex; justify-content: flex-end; margin-bottom: 16px; }
+  .top { position: static; justify-content: flex-end; margin-bottom: 16px; }
   .shell { display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
   .side { min-width: 0; }
 

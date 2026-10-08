@@ -3,12 +3,12 @@
     <iframe
       v-if="playing"
       :src="src"
-      :title="video.label"
+      :title="t.govllm.videoLabel"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     />
     <!-- Lightweight stand-in: YouTube only loads once the visitor asks for it. -->
-    <button v-else type="button" class="facade" :aria-label="`Play: ${video.label}`" @click="playing = true">
+    <button v-else type="button" class="facade" :aria-label="`${t.ui.play} ${t.govllm.videoLabel}`" @click="playing = true">
       <img :src="video.poster" alt="" width="1280" height="720" loading="lazy" decoding="async" />
       <span class="play" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg>
@@ -20,6 +20,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { govllmVideo as video } from '@/data/site'
+import { usePage } from '@/composables/useContent'
+
+const { t } = usePage()
 
 const playing = ref(false)
 const src = computed(
