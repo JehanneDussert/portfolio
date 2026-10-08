@@ -23,12 +23,12 @@ const fr: Content = {
   home: {
     title: 'Jehanne Dussert — AI Governance Lead',
     description:
-      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis les règles juridiques en code qui contrôle les systèmes d’IA pendant qu’ils fonctionnent.',
+      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
   },
   person: {
     name: 'Jehanne Dussert',
     intro:
-      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis les règles juridiques en code qui contrôle les systèmes d’IA pendant qu’ils fonctionnent.',
+      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
     links: [
       { label: 'Email', href: 'mailto:research.jehannedussert@gmail.com' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jehanne-dussert' },
