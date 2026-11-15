@@ -12,6 +12,7 @@
             {{ item.title }}<template v-if="item.href">&nbsp;<span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> {{ t.ui.newTab }}</span></template>
           </span>
           <span class="sub">{{ item.subtitle }}</span>
+          <span v-if="item.description" class="desc">{{ item.description }}</span>
         </span>
         <span class="year">{{ item.year }}</span>
       </component>
@@ -50,6 +51,13 @@ const { t } = usePage()
   color: var(--dim);
 }
 .year { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.desc {
+  max-width: 640px;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--mute);
+}
 .arrow {
   display: inline-block;
   color: var(--ring);

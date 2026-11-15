@@ -19,8 +19,29 @@ export interface AlsoRow {
 export interface ListItem {
   title: string
   subtitle: string
+  /** Date as shown in the right-hand column */
   year: string
+  /** One line in grey under the subtitle */
+  description?: string
   href?: string
+  /** ISO date (YYYY-MM-DD); from the day of the build on, the item is listed as upcoming */
+  date?: string
+}
+
+export interface Fact {
+  label: string
+  text: string
+}
+
+export interface Organisers {
+  title: string
+  bio: Fact
+  copy: string
+  copied: string
+  facts: Fact[]
+  contact: { label: string; email: string }
+  /** HD photos offered for download; the row only appears once there is at least one. */
+  photos: { label: string; items: Link[] }
 }
 
 export interface ProjectSheet {
@@ -39,7 +60,7 @@ export interface ProjectSheet {
 
 export interface SectionText {
   label: string
-  /** Label in the phone's horizontal row */
+  /** Label in the phone's horizontal row: the start of `label` (or the same) */
   short: string
   title: string
   description: string
@@ -63,6 +84,7 @@ export interface Content {
     also: string
     play: string
     education: string
+    upcoming: string
   }
   home: { title: string; description: string }
   person: { name: string; intro: string; links: Link[] }
@@ -72,5 +94,5 @@ export interface Content {
   path: ListItem[]
   education: ListItem[]
   talks: ListItem[]
-  commitments: string[]
+  organisers: Organisers
 }

@@ -5,14 +5,16 @@ Vue 3 + Vite, prerendered with [vite-ssg](https://github.com/antfu-collective/vi
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm run build    # type-check + prerender the 6 routes into dist/
+npm run build    # type-check + prerender the 10 routes into dist/
 ```
 
 ## Structure
 
 ```
 src/
-├── data/site.ts              # all copy, links and section colours
+├── content/{en,fr}.ts        # all copy and links, one file per language
+├── data/site.ts              # routes, slugs and section colours
+├── data/redirects.ts         # old URLs and where they now go (mirrored in vercel.json)
 ├── App.vue                   # the shell: menu ⇄ sidebar, panel, head tags
 ├── composables/
 │   ├── useShell.ts           # home ⇄ section choreography (timers, fast clicks)
@@ -22,6 +24,7 @@ src/
 │   ├── ProjectSheet.vue      # Underlaid and GovLLM sheets ("figures first")
 │   ├── SheetHead.vue         # colour rule, tag, title
 │   ├── ListRows.vue          # Path and Talks & writing rows
+│   ├── OrganisersFacts.vue   # "For event organisers" on the Talks page
 │   ├── CountUp.vue           # 0 → 17 counter
 │   ├── UnderlaidMap.vue      # light and dark maps, cross-faded
 │   └── VideoEmbed.vue        # click-to-load YouTube player
@@ -32,9 +35,16 @@ public/
 └── media/                    # GovLLM video poster
 ```
 
-Routes: `/`, `/underlaid`, `/govllm`, `/path`, `/talks`, `/commitments`. They all render the same shell;
-the route only says which section is open. Each one is prerendered to `dist/<route>/index.html`,
+Routes: English at the root (`/`, `/underlaid`, `/govllm`, `/path`, `/talks`), French under `/fr`
+(`/fr`, `/fr/underlaid`, `/fr/govllm`, `/fr/parcours`, `/fr/interventions`). They all render the same shell;
+the route only says which language and which section are open. Each one is prerendered to `dist/<route>/index.html`,
 which Vercel serves before the SPA rewrite in `vercel.json`.
+
+Old URLs (French pages at the root, English pages under `/en`, the removed Commitments page) are listed in
+`src/data/redirects.ts` and answered with a 301 by the `redirects` in `vercel.json`: keep both lists in step.
+
+Talks with a `date` (ISO) on or after the day of the build are listed under "Upcoming": rebuild the site
+after an event for it to move to the main list.
 
 ## Underlaid map
 

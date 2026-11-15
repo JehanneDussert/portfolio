@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import App from './App.vue'
 import Empty from './components/Empty.vue'
 import { LANGS, pathFor, sections } from '@/data/site'
+import { legacyRedirects } from '@/data/redirects'
 import '@/assets/css/main.css'
 
 // Every route renders the same shell (App.vue); the route only says which
@@ -17,10 +18,8 @@ const routes: RouteRecordRaw[] = [
       meta: { lang, key: s.key },
     })),
   ]),
-  // English slugs served at the root before the site became bilingual
-  { path: '/path', redirect: '/en/path' },
-  { path: '/talks', redirect: '/en/talks' },
-  { path: '/commitments', redirect: '/en/commitments' },
+  // Old URLs: 301 on Vercel (vercel.json), the same targets here for client-side navigation.
+  ...legacyRedirects.map(({ from, to }) => ({ path: from, redirect: to })),
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 

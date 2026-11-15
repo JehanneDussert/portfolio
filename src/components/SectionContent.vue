@@ -16,32 +16,45 @@
 
   <article v-else-if="section === 'talks'" class="list-page">
     <SheetHead :title="t.sections.talks.label" />
-    <ListRows class="list" :items="t.talks" />
-  </article>
-
-  <article v-else-if="section === 'commitments'" class="list-page">
-    <SheetHead :title="t.sections.commitments.label" />
-    <ul class="tags">
-      <li v-for="c in t.commitments" :key="c" class="tag"><span class="dot" aria-hidden="true" />{{ c }}</li>
-    </ul>
+    <template v-if="talks.upcoming.length">
+      <h3 class="intertitle first">{{ t.ui.upcoming }}</h3>
+      <ListRows class="upcoming" :items="talks.upcoming" />
+    </template>
+    <ListRows class="list" :class="{ after: talks.upcoming.length }" :items="talks.past" />
+    <h3 class="intertitle">{{ t.organisers.title }}</h3>
+    <OrganisersFacts />
   </article>
 </template>
 
 <script setup lang="ts">
-import type { SectionKey } from '@/data/site'
+import { computed } from 'vue'
+import { BUILD_DATE, type SectionKey } from '@/data/site'
+import type { ListItem } from '@/content/types'
 import { usePage } from '@/composables/useContent'
 import ProjectSheet from './ProjectSheet.vue'
 import SheetHead from './SheetHead.vue'
 import ListRows from './ListRows.vue'
 import UnderlaidMap from './UnderlaidMap.vue'
 import VideoEmbed from './VideoEmbed.vue'
+import OrganisersFacts from './OrganisersFacts.vue'
 
 defineProps<{ section: SectionKey; visible: boolean }>()
 const { t } = usePage()
+
+// Split at build time (BUILD_DATE), so the prerendered page and the client agree.
+// Upcoming: soonest first. Past: the order of the data, newest first.
+const isUpcoming = (i: ListItem) => !!i.date && i.date >= BUILD_DATE
+const talks = computed(() => ({
+  upcoming: t.value.talks.filter(isUpcoming).sort((a, b) => a.date!.localeCompare(b.date!)),
+  past: t.value.talks.filter((i) => !isUpcoming(i)),
+}))
 </script>
 
 <style scoped>
 .list { margin-top: 40px; }
+.list.after { margin-top: 56px; }
+/* The past list right below opens with its own rule: no double rule across the gap. */
+.upcoming :deep(li:last-child) { border-bottom: 0; }
 .intertitle {
   font-size: 13px;
   font-weight: 700;
@@ -50,26 +63,5 @@ const { t } = usePage()
   color: var(--dim);
   margin: 56px 0 16px;
 }
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 40px;
-}
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 22px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  font-size: 18px;
-  color: var(--fg);
-}
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--c);
-}
+.intertitle.first { margin-top: 40px; }
 </style>

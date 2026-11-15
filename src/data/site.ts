@@ -1,7 +1,7 @@
 // Site configuration: section colours and routes. All text lives in src/content/{fr,en}.ts.
 
-export type SectionKey = 'underlaid' | 'govllm' | 'path' | 'talks' | 'commitments'
-export type Lang = 'fr' | 'en'
+export type SectionKey = 'underlaid' | 'govllm' | 'path' | 'talks'
+export type Lang = 'en' | 'fr'
 
 export interface Section {
   key: SectionKey
@@ -13,21 +13,22 @@ export interface Section {
 }
 
 export const SITE_URL = 'https://jehannedussert.com'
-export const LANGS: Lang[] = ['fr', 'en']
+/** The first one is the default language, served at the root. */
+export const LANGS: Lang[] = ['en', 'fr']
+export const DEFAULT_LANG: Lang = 'en'
 
 export const sections: Section[] = [
-  { key: 'underlaid', color: '#FF3E9A', ink: '#D1006F', slug: { fr: 'underlaid', en: 'underlaid' } },
-  { key: 'govllm', color: '#4C8DFF', ink: '#2A66D6', slug: { fr: 'govllm', en: 'govllm' } },
-  { key: 'path', color: '#FF8A1F', ink: '#A85200', slug: { fr: 'parcours', en: 'path' } },
-  { key: 'talks', color: '#20C98B', ink: '#087F56', slug: { fr: 'interventions', en: 'talks' } },
-  { key: 'commitments', color: '#B48CFF', ink: '#7D4FDB', slug: { fr: 'engagements', en: 'commitments' } },
+  { key: 'underlaid', color: '#FF3E9A', ink: '#D1006F', slug: { en: 'underlaid', fr: 'underlaid' } },
+  { key: 'govllm', color: '#4C8DFF', ink: '#2A66D6', slug: { en: 'govllm', fr: 'govllm' } },
+  { key: 'path', color: '#FF8A1F', ink: '#A85200', slug: { en: 'path', fr: 'parcours' } },
+  { key: 'talks', color: '#20C98B', ink: '#087F56', slug: { en: 'talks', fr: 'interventions' } },
 ]
 
 export const sectionByKey = Object.fromEntries(sections.map((s) => [s.key, s])) as Record<SectionKey, Section>
 
-/** Path of a page: French at the root, English under /en. */
+/** Path of a page: English at the root, French under /fr. */
 export function pathFor(lang: Lang, key: SectionKey | null): string {
-  const base = lang === 'en' ? '/en' : ''
+  const base = lang === DEFAULT_LANG ? '' : `/${lang}`
   if (!key) return base || '/'
   return `${base}/${sectionByKey[key].slug[lang]}`
 }
@@ -37,3 +38,6 @@ export const govllmVideo = {
   start: 0,
   poster: '/media/govllm-parlez-moi-dia-poster.jpg',
 }
+
+/** Day of the build (YYYY-MM-DD): dated talks on or after it are listed as upcoming. */
+export const BUILD_DATE: string = __BUILD_DATE__
