@@ -7,7 +7,6 @@
         class="pill"
         :lang="other"
         :hreflang="other"
-        @click="rememberLang(other)"
       >
         {{ t.ui.switchLang.label }}<span class="sr-only"> — {{ t.ui.switchLang.name }}</span>
       </RouterLink>
@@ -42,8 +41,7 @@
                 @click="onEntry($event, s.key)"
               >
                 <span class="dot" aria-hidden="true" />
-                <span class="label">{{ t.sections[s.key].label }}</span>
-                <span class="short">{{ t.sections[s.key].short }}</span>
+                <span class="label">{{ labelParts(s.key)[0] }}<span v-if="labelParts(s.key)[1]" class="rest">{{ labelParts(s.key)[1] }}</span></span>
               </RouterLink>
             </li>
           </ul>
@@ -69,7 +67,7 @@
 import { computed, nextTick, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { LANGS, pathFor, SITE_URL, sectionByKey, sections, type Lang, type SectionKey } from '@/data/site'
+import { DEFAULT_LANG, LANGS, pathFor, SITE_URL, sectionByKey, sections, type Lang, type SectionKey } from '@/data/site'
 import { content, usePage } from '@/composables/useContent'
 import { useShell } from '@/composables/useShell'
 import { useTheme } from '@/composables/useTheme'
@@ -117,8 +115,11 @@ function onEntry(e: MouseEvent, k: SectionKey) {
   }
 }
 
-function rememberLang(l: Lang) {
-  try { localStorage.setItem('lang', l) } catch { /* private mode */ }
+// The phone's section row shows the short name, which starts the full label. Writing the name
+// once and hiding only its end keeps screen readers and plain text from reading it twice.
+function labelParts(k: SectionKey): [string, string] {
+  const { label, short } = t.value.sections[k]
+  return label.startsWith(short) ? [short, label.slice(short.length)] : [label, '']
 }
 
 // ── Head ────────────────────────────────────────────────────────
@@ -136,7 +137,7 @@ const personLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Jehanne Dussert',
-  jobTitle: 'AI Governance Lead',
+  jobTitle: 'Group AI Governance Lead',
   worksFor: { '@type': 'Organization', name: 'AXA Group Operations' },
   sameAs: ['https://www.linkedin.com/in/jehanne-dussert', 'https://github.com/JehanneDussert'],
   alumniOf: [
@@ -168,7 +169,7 @@ useHead({
   link: () => [
     { rel: 'canonical', href: url(lang.value) },
     ...LANGS.map((l) => ({ rel: 'alternate', hreflang: l, href: url(l), key: `alt-${l}` })),
-    { rel: 'alternate', hreflang: 'x-default', href: url('fr'), key: 'alt-x' },
+    { rel: 'alternate', hreflang: 'x-default', href: url(DEFAULT_LANG), key: 'alt-x' },
   ],
   script: () =>
     key.value === null
@@ -325,7 +326,6 @@ useHead({
 }
 .entry:hover .dot::after { animation: pulse 1.4s var(--ease-out) infinite; }
 .section .entry.active .dot { transform: scale(1.3); }
-.short { display: none; }
 
 .links {
   display: flex;
@@ -426,8 +426,7 @@ useHead({
   .section .intro { display: none; }
   .section .menu { flex-direction: row; gap: 4px; }
   .section .entry { font-size: 15px; padding: 0 8px; white-space: nowrap; }
-  .section .label { display: none; }
-  .section .short { display: inline; }
+  .section .rest { display: none; }
   .section .links { display: none; }
   .links a { display: inline-block; padding: 12px 0; }
 

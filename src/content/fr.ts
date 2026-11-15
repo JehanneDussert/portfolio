@@ -19,16 +19,17 @@ const fr: Content = {
     also: 'Aussi',
     play: 'Lire :',
     education: 'Formation',
+    upcoming: 'À venir',
   },
   home: {
-    title: 'Jehanne Dussert — AI Governance Lead',
+    title: 'Jehanne Dussert — Group AI Governance Lead',
     description:
-      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
+      'Ingénieure et juriste, Group AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
   },
   person: {
     name: 'Jehanne Dussert',
     intro:
-      'Ingénieure et juriste, AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
+      'Ingénieure et juriste, Group AI Governance Lead chez AXA Group Operations. Je traduis le droit en code, pour que la conformité des systèmes d’IA se vérifie en continu.',
     links: [
       { label: 'Email', href: 'mailto:research.jehannedussert@gmail.com' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jehanne-dussert' },
@@ -55,7 +56,7 @@ const fr: Content = {
       short: 'Parcours',
       title: 'Parcours — Jehanne Dussert',
       description:
-        'AI Governance Lead chez AXA Group Operations et experte évaluatrice pour la Commission européenne. Auparavant DGFiP, DINUM et Conseil de l’Europe (CEPEJ). École 42 et Université de Strasbourg.',
+        'Group AI Governance Lead chez AXA Group Operations et experte évaluatrice pour la Commission européenne. Auparavant DGFiP, DINUM, CNFPT et Conseil de l’Europe (CEPEJ). École 42 et Université de Strasbourg.',
     },
     talks: {
       label: 'Interventions & écrits',
@@ -63,12 +64,6 @@ const fr: Content = {
       title: 'Interventions & écrits — Jehanne Dussert',
       description:
         'Contributions, interventions et écrits sur la gouvernance de l’IA : Nations unies, Commission européenne, Conseil de l’Europe, Hacktivate AI, Parlez-moi d’IA.',
-    },
-    commitments: {
-      label: 'Engagements',
-      short: 'Engagements',
-      title: 'Engagements — Jehanne Dussert',
-      description: 'Féminisme, protection de l’enfance, biais algorithmiques, endométriose.',
     },
   },
   underlaid: {
@@ -104,7 +99,6 @@ const fr: Content = {
     also: [
       { key: 'OECD.AI', text: 'référencé dans le catalogue d’outils et de métriques de l’OCDE, juin 2026' },
       { key: 'arXiv', text: 'prépublication « Who judges the judges? », mai 2026' },
-      { key: '30 ★', text: 'sur GitHub, et présenté dans Parlez-moi d’IA n°106' },
     ],
     buttons: [
       { label: 'Code', href: 'https://github.com/JehanneDussert/govllm', primary: true },
@@ -114,48 +108,90 @@ const fr: Content = {
     videoLabel: 'Extrait de Parlez-moi d’IA n°106, sous-titré',
   },
   path: [
-    { title: 'AI Governance Lead', subtitle: 'AXA Group Operations', year: '2026–' },
+    {
+      title: 'Group AI Governance Lead',
+      subtitle: 'AXA Group Operations',
+      year: '2026–',
+      description:
+        'Pilote la gouvernance de l’IA du Groupe dans 17 pays, avec une priorité sur l’IA agentique : approche par les risques avec Risk et Compliance, modèle fédéré avec les entités, règles traduites en contrôles exécutables (policy-as-code). Product Owner de l’outil de gouvernance IA du Groupe.',
+    },
     {
       title: 'Tech Lead GenAI & coordinatrice de la gouvernance de l’IA',
       subtitle: 'DGFiP (Direction générale des Finances publiques)',
       year: '2024–26',
+      description:
+        'A piloté la doctrine nationale d’usage de l’IA et mis en production des systèmes LLM pour plus de 95 000 utilisateurs ; représentante de la France au groupe de travail EU Fiscalis sur l’IA générative.',
     },
-    { title: 'Experte évaluatrice', subtitle: 'Commission européenne', year: '2025–' },
+    {
+      title: 'Experte évaluatrice',
+      subtitle: 'Commission européenne',
+      year: '2025–',
+      description: 'Évalue des projets de recherche en IA pour Horizon Europe : risques, faisabilité, impact.',
+    },
+    {
+      title: 'Formatrice IA générative',
+      subtitle: 'CNFPT (Centre national de la fonction publique territoriale)',
+      year: '2024–26',
+      description: 'A formé les agents des collectivités territoriales aux usages et aux limites de l’IA générative.',
+    },
     {
       title: 'Membre de l’AI Advisory Board',
       subtitle: 'Conseil de l’Europe (CEPEJ)',
       year: '2024–25',
+      description: 'Membre nommée ; co-autrice du premier rapport du board sur l’IA dans les systèmes judiciaires.',
       href: 'https://www.coe.int/fr/web/cepej/-/cepej-appoints-members-for-its-artificial-intelligence-advisory-board-for-the-period-2024-2025',
     },
-    { title: 'Ingénieure IA générative', subtitle: 'DINUM (Direction interministérielle du numérique)', year: '2023–24' },
+    {
+      title: 'Ingénieure IA générative',
+      subtitle: 'DINUM (Direction interministérielle du numérique)',
+      year: '2023–24',
+      description:
+        'Développeuse sur Albert, l’IA générative de l’État, jusqu’à son lancement ; pré-sélection aux Victoires des acteurs publics 2024.',
+    },
     {
       title: 'Entrepreneuse d’intérêt général',
-      subtitle: 'programme EIG · a conçu TwinCity, un Paris synthétique pour tester les biais de la vision par ordinateur',
+      subtitle: 'programme EIG',
       year: '2022–23',
+      description:
+        'A conçu TwinCity, un Paris synthétique pour tester les biais de la vision par ordinateur ; a dirigé une équipe de 3 et rédigé le protocole de gouvernance du projet.',
     },
   ],
   education: [
     { title: 'Architecte en technologie numérique', subtitle: 'École 42, Paris', year: '2019–22' },
     { title: 'Master 2 Cyberjustice', subtitle: 'Faculté de droit, Université de Strasbourg', year: '2018–19' },
   ],
+  // Newest first. Items with a `date` on or after the day of the build are listed under « À venir ».
   talks: [
     {
-      title: 'Dialogue mondial sur la gouvernance de l’IA',
-      subtitle: 'Nations unies · contribution',
-      year: '2026',
-      href: 'https://www.un.org/global-dialogue-ai-governance/en/inputs',
+      title: 'Hacktivate AI 2.0',
+      subtitle: 'Track captain « Agentic AI Governance » · CEPS, ECIPE et OpenAI · Bruxelles',
+      year: '1er déc. 2026',
+      date: '2026-12-01',
+      href: 'https://events.openai.com/hacktivateai/',
     },
-    { title: 'AI Act, article 50', subtitle: 'Commission européenne · contribution', year: '2026' },
+    {
+      title: 'Gouverner l’IA agentique à l’échelle',
+      subtitle: 'Intervention · rencontre de Chief Data & AI Officers organisée par Umake',
+      year: '26 nov. 2026',
+      date: '2026-11-26',
+    },
     {
       title: 'Parlez-moi d’IA n°106',
       subtitle: 'Radio · Cause Commune',
-      year: '2026',
+      year: 'sept. 2026',
       href: 'https://www.youtube.com/watch?v=VBzLZySLnWU&t=482s',
+    },
+    { title: 'AI Act, article 50', subtitle: 'Commission européenne · contribution', year: 'juin 2026' },
+    {
+      title: 'Dialogue mondial sur la gouvernance de l’IA',
+      subtitle: 'Nations unies · contribution',
+      year: 'avr. 2026',
+      href: 'https://www.un.org/global-dialogue-ai-governance/en/inputs',
     },
     {
       title: 'Hacktivate AI',
-      subtitle: 'Organisé par OpenAI · intervenante invitée · Bruxelles, 23 septembre',
-      year: '2025',
+      subtitle: 'Organisé par OpenAI · intervenante invitée · Bruxelles',
+      year: '23 sept. 2025',
       href: 'https://events.openai.com/hacktivateai/',
     },
     {
@@ -167,11 +203,29 @@ const fr: Content = {
     {
       title: 'Le journal de Mia, 2042–2048',
       subtitle: 'Fiction · Flaash n°4, numéro IA',
-      year: '2024',
+      year: 'automne 2024',
       href: 'https://www.lalibrairiedesfables.fr/livre/23946623-flaash-n04-ia-automne-2024-la-revue-culturelle-et-technique-d-anticipation-lilia-hassaine-luc-julia-nicolas-gaudemet-ariel-kyrou-flaash',
     },
   ],
-  commitments: ['Féminisme', 'Protection de l’enfance', 'Biais algorithmiques', 'Endométriose'],
+  organisers: {
+    title: 'Pour les organisateurs',
+    bio: {
+      label: 'Bio courte',
+      text: 'Jehanne Dussert est ingénieure et juriste, Group AI Governance Lead chez AXA. Elle pilote la gouvernance de l’IA du Groupe dans 17 pays, avec une priorité sur l’IA agentique et la traduction des règles en code (policy-as-code). Elle a auparavant dirigé la doctrine nationale d’usage de l’IA à la DGFiP. Elle a contribué aux travaux de l’ONU, de la Commission européenne et du Conseil de l’Europe ; son projet open source GovLLM est référencé par l’OCDE.',
+    },
+    copy: 'Copier',
+    copied: 'Copié',
+    facts: [
+      {
+        label: 'Sujets',
+        text: 'Gouvernance de l’IA agentique · Conformité vérifiée en continu (policy-as-code) · IA générative dans le secteur public',
+      },
+      { label: 'Formats & langues', text: 'Keynote, table ronde, atelier · français, anglais' },
+    ],
+    contact: { label: 'Contact', email: 'research.jehannedussert@gmail.com' },
+    // HD photos, e.g. { label: 'Portrait, 3000 × 2000 px', href: '/media/jehanne-dussert-portrait.jpg' }
+    photos: { label: 'Photos', items: [] },
+  },
 }
 
 export default fr
